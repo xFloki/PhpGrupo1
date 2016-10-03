@@ -23,6 +23,7 @@ if ($numero_dnis > 0) {
     $r = $resultado_consulta->fetch_array();
     
     $DNI = $r['DNI'];
+    $Nombre = $r['Nombre'];
     $password = $r['Password'];
     if ($usuario_clave == $password) {
          //inicializo la sesion
@@ -38,12 +39,13 @@ if ($numero_dnis > 0) {
             
              
          } 
-      
-        require 'menu_inicio.php';        
-        //guardo los datos del usuario que ha hecho login correcto 
+       //guardo los datos del usuario que ha hecho login correcto 
         $_SESSION['DNI'] = $DNI;
-        $_SESSION['Nombre'] = $r['Nombre'];
+        $_SESSION['Nombre'] = $Nombre;
         $_SESSION['Email'] = $r['Email'];
+        
+        require 'menu_inicio.php';        
+       
         
     } else {
 //         session_start();
