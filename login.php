@@ -43,6 +43,7 @@ if ($numero_dnis > 0) {
         $_SESSION['DNI'] = $DNI;
         $_SESSION['Nombre'] = $Nombre;
         $_SESSION['Email'] = $r['Email'];
+        $_SESSION['Apellidos'] = $r['Apellidos'];
         
         require 'menu_inicio.php';        
        
