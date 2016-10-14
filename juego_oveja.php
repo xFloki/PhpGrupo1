@@ -28,7 +28,7 @@
             }
             
             .box.flip {
-                transform: rotateY(180deg);
+                transform: rotateY(180º);
             }
             
             .card {
@@ -51,7 +51,9 @@
             }
             
             .back {
-                transform: rotateY(180deg);
+                transform: rotateY(180º);
+                background-image: url(img/quienesquien.jpg);
+                
                 
             }
             
