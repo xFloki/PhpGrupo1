@@ -1,96 +1,104 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
 <head>
-<style>
-div#memory_board{
-	background:#CCC;
-	border:#999 1px solid;
-	width:800px;
-	height:540px;
-	padding:24px;
-	margin:0px auto;
-}
-div#memory_board > div{
-	background: url(tile_bg.jpg) no-repeat;
-	border:#000 1px solid;
-	width:71px;
-	height:71px;
-	float:left;
-	margin:10px;
-	padding:20px;
-	font-size:64px;
-	cursor:pointer;
-	text-align:center;
-}
-</style>
-<script>
-// Scripted By Adam Khoury in connection with the following video tutorial:
-// http://www.youtube.com/watch?v=c_ohDPWmsM0
-var memory_array = ['A','A','B','B','C','C','D','D','E','E','F','F','G','G','H','H','I','I','J','J','K','K','L','L'];
-var memory_values = [];
-var memory_tile_ids = [];
-var tiles_flipped = 0;
-Array.prototype.memory_tile_shuffle = function(){
-    var i = this.length, j, temp;
-    while(--i > 0){
-        j = Math.floor(Math.random() * (i+1));
-        temp = this[j];
-        this[j] = this[i];
-        this[i] = temp;
+  <link rel="stylesheet" type="text/css" href="css/quizymemorygame.css" />
+  
+  <style>
+    body{
+      font-family:Helvetica, Arial, Verdana;
+      text-align: center;
     }
-}
-function newBoard(){
-	tiles_flipped = 0;
-	var output = '';
-    memory_array.memory_tile_shuffle();
-	for(var i = 0; i < memory_array.length; i++){
-		output += '<div id="tile_'+i+'" onclick="memoryFlipTile(this,\''+memory_array[i]+'\')"></div>';
-	}
-	document.getElementById('memory_board').innerHTML = output;
-}
-function memoryFlipTile(tile,val){
-	if(tile.innerHTML == "" && memory_values.length < 2){
-		tile.style.background = '#FFF';
-		tile.innerHTML = val;
-		if(memory_values.length == 0){
-			memory_values.push(val);
-			memory_tile_ids.push(tile.id);
-		} else if(memory_values.length == 1){
-			memory_values.push(val);
-			memory_tile_ids.push(tile.id);
-			if(memory_values[0] == memory_values[1]){
-				tiles_flipped += 2;
-				// Clear both arrays
-				memory_values = [];
-            	memory_tile_ids = [];
-				// Check to see if the whole board is cleared
-				if(tiles_flipped == memory_array.length){
-					alert("Board cleared... generating new board");
-					document.getElementById('memory_board').innerHTML = "";
-					newBoard();
-				}
-			} else {
-				function flip2Back(){
-				    // Flip the 2 tiles back over
-				    var tile_1 = document.getElementById(memory_tile_ids[0]);
-				    var tile_2 = document.getElementById(memory_tile_ids[1]);
-				    tile_1.style.background = 'url(tile_bg.jpg) no-repeat';
-            	    tile_1.innerHTML = "";
-				    tile_2.style.background = 'url(tile_bg.jpg) no-repeat';
-            	    tile_2.innerHTML = "";
-				    // Clear both arrays
-				    memory_values = [];
-            	    memory_tile_ids = [];
-				}
-				setTimeout(flip2Back, 700);
-			}
-		}
-	}
-}
-</script>
+    
+    #tutorial-memorygame{
+      margin:auto;
+      width:780px;
+    }
+    
+    .text-style1{
+      font-size:14pt;
+      color:#56605f;
+      font-weight:normal;
+      text-shadow: 1px 1px 1px #fff;
+      margin:0;
+      line-height:24pt;
+    }
+    
+    .reset-button{
+      margin: 0 0 1.5em 0;
+    }
+    
+  </style>
+
 </head>
 <body>
-<div id="memory_board"></div>
-<script>newBoard();</script>
+  
+  <h1>QuizY jQuery memory plugin</h1>
+  
+  <div id="main" role="main">
+    
+    <div id="tutorial-memorygame" class="quizy-memorygame">
+      <ul>
+          <li class="match1">
+            <img src="img/flag-Bulgaria.png">
+          </li>
+          <li class="match2">
+            <img src="img/flag-Cuba.png">
+          </li>
+          <li class="match3">
+            <img src="img/flag-Sweden.png">
+          </li>
+          <li class="match4">
+            <img src="img/flag-NewZealand.png">
+          </li>
+          <li class="match5">
+            <img src="img/flag-Uruguay.png">
+          </li>
+          <li class="match6">
+            <img src="img/flag-Tunisia.png">
+          </li>
+          <li class="match1">
+            <br><br><br><p class="text-style1">Bulgaria</p>
+          </li>
+          <li class="match2">
+            <br><br><br><p class="text-style1">Cuba</p>
+          </li>
+          <li class="match3">
+            <br><br><br><p class="text-style1">Sweden</p>
+          </li>
+          <li class="match4">
+            <br><br><br><p class="text-style1">New<br>Zealand</p>
+          </li>
+          <li class="match5">
+            <br><br><br><p class="text-style1">Uruguay</p>
+          </li>
+          <li class="match6">
+            <br><br><br><p class="text-style1">Tunisia</p>
+          </li>
+      </ul>
+    </div>
+    
+    
+    <div class="reset-button">
+      <a id="restart" href="">Reset game</a>
+    </div>
+    
+    <div>Flag icons for this demo - by <a href="http://www.gosquared.com/liquidicity/archives/1493" target="_blank">James Gill</a></div>
+
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="../js/jquery-1.7.1.min.js"><\/script>')</script>
+  <script src="../js/jquery-ui-1.8.17.custom.min.js"></script>
+  
+  <script src="../js/jquery.flip.min.js"></script>
+  <script src="../js/jquery.quizymemorygame.js"></script>
+  
+  <script>
+    var quizyParams = {itemWidth: 156, itemHeight: 156, itemsMargin:40, colCount:4, animType:'flip' , flipAnim:'tb', animSpeed:250, resultIcons:true, randomised:true }; 
+    $('#tutorial-memorygame').quizyMemoryGame(quizyParams);
+    $('#restart').click(function(){
+      $('#tutorial-memorygame').quizyMemoryGame('restart');
+      return false;
+    });
+  </script>
+
 </body>
 </html>
