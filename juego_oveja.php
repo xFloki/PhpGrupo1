@@ -2,13 +2,41 @@
 
 include ('./misfunciones.php');
 $mysqli = conectaBBDD();
+$imagenes = array();
+
 
 
 //hago la consulta a la BDD
-$resultado_consulta = $mysqli->query("SELECT Nombre_muestra, URL FROM imagen where Categoria = '1'");
- $r = $resultado_consulta->fetch_array();
-$JJ = $r['Nombre_muestra'];
-echo $JJ;
+$resultado_consulta = $mysqli->query("SELECT Nombre_muestra,URL FROM imagen where Categoria = '1'");
+$numero_imagenes = $resultado_consulta->num_rows;
+
+   for($i = 0; $i < $numero_imagenes; $i++ ){
+        $r = $resultado_consulta->fetch_array();
+       $imagenes[$i][0] = $r['Nombre_muestra'];
+        $imagenes[$i][1] = $r['URL'];
+   } 
+   
+   function randomize(){
+       $value = rand(0,1);
+       return $value;
+   }
+  
+   
+//  echo $value;
+  
+// sort($imagenes, randomize());
+shuffle($imagenes);
+  
+//    echo randomize();
+//    echo '<pre>';
+//    print_r ($imagenes);
+//    echo '</pre>';
+
+   
+ 
+   
+ 
+ 
 
 ?>
 
@@ -64,41 +92,41 @@ echo $JJ;
     <div id="tutorial-memorygame" class="quizy-memorygame">
       <ul>
           <li class="match1">
-              <img src="imgOveja/mitocondria.png">
+              <img src= <?php echo $imagenes[0][1] ?> >
           </li>
           <li class="match2">
-              <img src="imgOveja/reticulo_endoplasmatico.jpg">
+              <img src=<?php echo $imagenes[1][1] ?>>
           </li>
           <li class="match3">
-              <img src="imgOveja/aparato_de_goigi.jpg">
+              <img src=<?php echo $imagenes[2][1] ?>>
           </li>
           <li class="match4">
-            <img src="img/flag-NewZealand.png">
+              <img src=<?php echo $imagenes[3][1] ?>>
           </li>
           <li class="match5">
-            <img src="img/flag-Uruguay.png">
+              <img src=<?php echo $imagenes[4][1] ?>>
           </li>
           <li class="match6">
-            <img src="img/flag-Tunisia.png">
+              <img src=<?php echo $imagenes[5][1] ?>>
           </li>
          
           <li class="match1">
-            <br><br><br><p class="text-style1">Mitocondria</p>
+            <br><br><br><p class="text-style1"><?php echo $imagenes[0][0] ?></p>
           </li>
           <li class="match2">
-            <br><br><br><p class="text-style1">Reticulo endoplasmatico</p>
+            <br><br><br><p class="text-style1"><?php echo $imagenes[1][0] ?></p>
           </li>
           <li class="match3">
-            <br><br><br><p class="text-style1">Aparato de Goigi</p>
+            <br><br><br><p class="text-style1"><?php echo $imagenes[2][0] ?></p>
           </li>
           <li class="match4">
-            <br><br><br><p class="text-style1">New<br>Zealand</p>
+            <br><br><br><p class="text-style1"><?php echo $imagenes[3][0] ?></p>
           </li>
           <li class="match5">
-            <br><br><br><p class="text-style1">Uruguay</p>
+            <br><br><br><p class="text-style1"><?php echo $imagenes[4][0] ?></p>
           </li>
           <li class="match6">
-            <br><br><br><p class="text-style1">Tunisia</p>
+            <br><br><br><p class="text-style1"><?php echo $imagenes[5][0] ?></p>
           </li>
      
       </ul>
