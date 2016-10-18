@@ -20,11 +20,13 @@ $numero_imagenes = $resultado_consulta->num_rows;
 //       $value = rand(0,1);
 //       return $value;
 //   }
-//  
    
 //  echo $value;
   
 // sort($imagenes, randomize());
+   
+//desordenamos el array ya que en la base de datos tenemos mas de 6 imagenes queremo que su orden en el array
+//sea aleatorio de esta manera cada ve que se incia el juego saldran unas u otras.   
 shuffle($imagenes);
   
 //    echo randomize();
@@ -33,10 +35,6 @@ shuffle($imagenes);
 //    echo '</pre>';
 
    
- 
-   
- 
- 
 
 ?>
 
