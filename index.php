@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 
+<!--
+Categoria Imagenes
+JuegoOveja = 1
+EstudioFlip = 2
+-->
+
+
 <html>
     <head>
         <meta charset="UTF-8">

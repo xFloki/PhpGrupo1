@@ -7,20 +7,20 @@ $imagenes = array();
 
 
 //hago la consulta a la BDD
-$resultado_consulta = $mysqli->query("SELECT Nombre_muestra,URL FROM imagen where Categoria = '1'");
+$resultado_consulta = $mysqli->query("SELECT Nombre_muestra,Nombre FROM imagen where Categoria = '1'");
 $numero_imagenes = $resultado_consulta->num_rows;
 
    for($i = 0; $i < $numero_imagenes; $i++ ){
         $r = $resultado_consulta->fetch_array();
        $imagenes[$i][0] = $r['Nombre_muestra'];
-        $imagenes[$i][1] = $r['URL'];
+        $imagenes[$i][1] = $r['Nombre'];
    } 
    
-   function randomize(){
-       $value = rand(0,1);
-       return $value;
-   }
-  
+//   function randomize(){
+//       $value = rand(0,1);
+//       return $value;
+//   }
+//  
    
 //  echo $value;
   
