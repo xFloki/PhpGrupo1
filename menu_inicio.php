@@ -10,6 +10,8 @@ if (!isset($_SESSION)) {
 $nombre = $_SESSION['Nombre'];
 $apellido = $_SESSION['Apellidos']
 ?>
+
+
 <html>
     <head>
         <meta charset="UTF-8">
@@ -101,17 +103,50 @@ $apellido = $_SESSION['Apellidos']
     </div>
     <br>
     <br>
+    <div class="container" id="centro1" >
     <div class="row">
         <h2 class="text-center" style="color:white;">PRACTIQUEMOS</h2>
     </div>
     <br>
-    <div class="container" id="centro">
+    
         <div class="container">
 
             <div class="gallery">
                 <ul>
                     <li>
+                        
+                        <div class='wrapper' id="menu" onclick="$('div#centro1').load('juego_oveja.php')">
+                            <!-- image -->
+                            <img class="agran" src="img/ovejaPareja.jpg" />
+                            <!-- description div -->
+                            <div class='description' >
+                                <!-- description content -->
+                                <p class='description_content'>Cada oveja con su pareja</p>
+                                <!-- end description content -->
+                            </div>
+                            <!-- end description div -->
 
+                        </div>
+
+                    </li>
+                    <li>
+                        <a href="juego_flip.php">
+                        <div class='wrapper' id="menu">
+                            <!-- image -->
+                            <img class="agran" src="img/ovejaPareja.jpg" />
+                            <!-- description div -->
+                            <div class='description' >
+                                <!-- description content -->
+                                <p class='description_content'>Flip, Estudio</p>
+                                <!-- end description content -->
+                            </div>
+                            <!-- end description div -->
+
+                        </div>
+
+                    </li>
+                    <li>
+                         <a href="juego_flip.php">
                         <div class='wrapper' id="menu">
                             <!-- image -->
                             <img class="agran" src="img/ovejaPareja.jpg" />
@@ -127,7 +162,7 @@ $apellido = $_SESSION['Apellidos']
 
                     </li>
                     <li>
-
+                         <a href="juego_oveja.php">
                         <div class='wrapper' id="menu">
                             <!-- image -->
                             <img class="agran" src="img/ovejaPareja.jpg" />
@@ -143,39 +178,7 @@ $apellido = $_SESSION['Apellidos']
 
                     </li>
                     <li>
-
-                        <div class='wrapper' id="menu">
-                            <!-- image -->
-                            <img class="agran" src="img/ovejaPareja.jpg" />
-                            <!-- description div -->
-                            <div class='description' >
-                                <!-- description content -->
-                                <p class='description_content'>Cada oveja con su pareja</p>
-                                <!-- end description content -->
-                            </div>
-                            <!-- end description div -->
-
-                        </div>
-
-                    </li>
-                    <li>
-
-                        <div class='wrapper' id="menu">
-                            <!-- image -->
-                            <img class="agran" src="img/ovejaPareja.jpg" />
-                            <!-- description div -->
-                            <div class='description' >
-                                <!-- description content -->
-                                <p class='description_content'>Cada oveja con su pareja</p>
-                                <!-- end description content -->
-                            </div>
-                            <!-- end description div -->
-
-                        </div>
-
-                    </li>
-                    <li>
-
+                         <a href="juego_adivina.php">
                         <div class='wrapper' id="menu">
                             <!-- image -->
                             <img class="agran" src="img/ovejaPareja.jpg" />

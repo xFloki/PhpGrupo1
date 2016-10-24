@@ -13,6 +13,7 @@
            
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js"></script>
+        
         <script rel="stylesheet"  src="js/jquery.flip.min.js"></script>
 
         <script type="text/javascript" src="js/script.js"></script>
@@ -26,7 +27,7 @@
     </head>
 
     <body>
-
+        <br> <h1>Voltea la imagen para aprender más!</h1><br>
 
         <?php
         include ('./misfunciones.php');

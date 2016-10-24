@@ -79,8 +79,8 @@ shuffle($imagenes);
 
 </head>
 <body>
-    <br>
-  <h1>Juego Cada Oveja Con su Pareja</h1>
+    
+  <h1 style="color:white;">Juego Cada Oveja Con su Pareja</h1>
    <br>
    
    
@@ -138,12 +138,10 @@ shuffle($imagenes);
   
 
 
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="../js/jquery-1.7.1.min.js"><\/script>')</script>
+<!--  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="../js/jquery-1.7.1.min.js"><\/script>')</script>-->
   <script src="js/jquery-ui-1.8.17.custom.min.js"></script>
   
-  <script src="js/jquery.flip.min.js"></script>
-  <script src="js/jquery.quizymemorygame.js"></script>
   
   <script>
     var quizyParams = {itemWidth: 156, itemHeight: 156, itemsMargin:40, colCount:4, animType:'flip' , flipAnim:'tb', animSpeed:250, resultIcons:true, randomised:true }; 
