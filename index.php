@@ -68,11 +68,12 @@ if (!isset($_SESSION)) {session_start();}
 
         ?>
     </body>
-    <script src="js/jquery-ui-1.8.17.custom.min.js"></script>
-    <script src="js/jquery-1.7.1.min.js" /></script>
-<!--    <script src="js/bootstrap.min.js"></script>-->
-    <script src="js/jquery.flip.min.js"></script>
-  <script src="js/jquery.quizymemorygame.js"></script>
+
+    
+    <script src="js/jquery-3.1.0.min.js" /></script><!--
+   <script src="js/jquery-ui-1.8.17.custom.min.js"></script>-->
+    <script src="js/bootstrap.min.js"></script>
+    
       <script>
           function chequeaPass(){
               var _usuario_nombre = $('#usuario_nombre').val();

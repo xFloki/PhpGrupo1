@@ -42,7 +42,7 @@ $apellido = $_SESSION['Apellidos']
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="#">Home</a></li>
                         <li><a href="#about">About</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#" onclick="loadOveja()">oveja</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
                             <ul class="dropdown-menu">
@@ -64,7 +64,7 @@ $apellido = $_SESSION['Apellidos']
                             <ul class="dropdown-menu">
                                  <li><a href="#">Conectado como <?php echo $nombre; echo ' '; ?><?php echo $apellido; ?></a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="#">Tú Perfil</a></li>
+                                <li><a href="#" onclick="loadOveja()">Tú Perfil</a></li>
                                 <li><a href="#">Ayuda</a></li>
                                 <li role="separator" class="divider"></li>                                
                                 <li><a href="#">Opciones</a></li>
@@ -216,17 +216,9 @@ $apellido = $_SESSION['Apellidos']
     </div>
 </body>
 <script>
-    // Create a lightbox
-
-
-
-// Add image and caption to lightbox
-
-
-
-// Add lighbox to document
-
-
+  function loadOveja {
+     $('#centro1').load("juego_oveja.php");
+  }
 
     $('.wrapper').hover(
             function () {

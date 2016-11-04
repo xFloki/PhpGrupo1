@@ -30,8 +30,7 @@
 }
 
 .quizy-mg-item .quizy-mg-item-top{
-  background:url('img/logo_ufv_azul.png');
- 
+  background:url('img/quizy-mg-item-top.png');
 }
 
 /* styles for the popup notifications */
@@ -47,16 +46,22 @@
 }
 
 .quizy-mg-notification-fly-neg{
+  margin-left:300px;
+  position: relative;
   background:url('img/quizy-mg-notif-neg.png');
 }
 
 .quizy-mg-notification-fly-pos{
+  margin-left:300px;
+  position: relative;
   background:url('img/quizy-mg-notif-pos.png');
 }
 
 /* styles for the game summary */
 #quizy-game-summary {
-   width:300px;
+  margin-left:300px;
+  position: relative;
+  width:300px;
   height:160px;
   position:absolute;
   z-index:1001;
@@ -64,7 +69,7 @@
   box-shadow: rgba(0,0,0,0.7) 0 0 4px, inset 0 0 20px rgba(0, 0, 0, 0.4);;
   border:1px solid #000;
   display:none;
-  text-align: center
+  text-align: center;
 }
 
 #quizy-game-summary div.gs-column{
