@@ -103,8 +103,8 @@ if (!isset($_SESSION)) {session_start();}
             $('#centro').load("login.php",{
                
 //                recordar : _recordar,
-                usuario_nombre : "1",
-                usuario_clave: 4
+                usuario_nombre : _usuario_nombre,
+                usuario_clave: _usuario_clave
             });
               
           }

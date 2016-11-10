@@ -57,7 +57,7 @@ if ($numero_dnis > 0) {
         
     }
 } else {
-    require 'mensaje_error.php';
+    require 'index.php';
 }
 ?>
         
