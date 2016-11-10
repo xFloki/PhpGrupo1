@@ -5,11 +5,11 @@ body {
 }
 
 
-wrapper{
+.wrapper{
 	float:left; /* important */
 	position:relative; /* important(so we can absolutely position the description div */
 }
-description{
+.description{
 	position:absolute; /* absolute position (so we can position it where we want)*/
 	bottom:0px; /* position will be on bottom */
 	left:0px;
