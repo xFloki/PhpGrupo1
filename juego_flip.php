@@ -76,7 +76,7 @@
                     </div> 
 
                     <div class="back"> 
-                        <h3 style="margin:15px; color: #46b8da;">' . $imagenes[$contador][3] . '</h3>
+                        <h3 style="margin:15px; color: #46b8da; line-height:4px">' . $imagenes[$contador][3] . '</h3>
                       <p style="margin:18px;"> ' . $descripcion = substr($imagenes[$contador][1], 0, 140) . '
                         <button style="color:white;"onclick="myFunction(\'' . $contador . '\')" type="button" class="btn btn-link" data-toggle="modal" data-target="#myModal">...</button></p>
 
@@ -115,7 +115,7 @@
                     </div> 
 
                     <div class="back"> 
-                        <h4 style="align">' . $imagenes[$contador][3] . '</h4>
+                        <h3 style="margin:15px; color: #46b8da; line-height:4px">' . $imagenes[$contador][3] . '</h3>
                       <p> ' . $descripcion = substr($imagenes[$contador][1], 0, 200) . '
                         <button onclick="myFunction(\'' . $contador . '\')" type="button" class="btn btn-link" data-toggle="modal" data-target="#myModal-' . $i . '">...</button></p>
                     </div> 
@@ -168,14 +168,14 @@
                     <div class="modal fade" id="myModal" role="dialog">
                         <div class="modal-dialog modal-lg" >
                             <div class="modal-content">
-                                <div class="modal-header">
+                                <div class="modal-header" style="background-color:rgba(0,0,0, 0.4);">
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                                     <h4 id="titulo_modal" class="modal-title"></h4>
                                 </div>
                                 <div class="modal-body">
                                     <p id="descripcion_modal"></p>
                                 </div>
-                                <div class="modal-footer">
+                                <div class="modal-footer"  style="background-color:rgba(0,0,0, 0.4);">
                                     <button  type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                                 </div>
                             </div>

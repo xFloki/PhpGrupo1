@@ -107,7 +107,7 @@ $apellido = $_SESSION['Apellidos']
     <div class="row">
         <h2 class="text-center" style="color:white;">PRACTIQUEMOS</h2>
     </div>
-    <br>
+  
     
         <div class="container">
 
