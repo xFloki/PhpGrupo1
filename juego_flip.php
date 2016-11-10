@@ -38,7 +38,7 @@
 
 //ahora voy a usar los datos en un ejemplo     
         ?>
-        <div id="main"  style="margin:40px 10% 0 10%" >
+        <div id="main"  style="margin:0px 10% 0 10%" >
             <div class="row  ">
                 <?php
 // Looping through the array:

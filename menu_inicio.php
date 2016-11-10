@@ -117,7 +117,7 @@ $apellido = $_SESSION['Apellidos']
                         
                         <div class='wrapper' id="menu" onclick="$('div#centro1').load('juego_oveja.php')">
                             <!-- image -->
-                            <img class="agran" src="img/ovejaPareja.jpg" />
+                            <img  id="imagen_menu"class="agran" src="img/ovejaPareja.jpg" />
                             <!-- description div -->
                             <div class='description' >
                                 <!-- description content -->
@@ -130,10 +130,10 @@ $apellido = $_SESSION['Apellidos']
 
                     </li>
                     <li>
-                        <a href="juego_flip.php">
-                        <div class='wrapper' id="menu">
+                        
+                        <div class='wrapper' id="menu" onclick="$('div#centro1').load('juego_flip.php')">
                             <!-- image -->
-                            <img class="agran" src="img/ovejaPareja.jpg" />
+                            <img id="imagen_menu" class="agran" src="img/ovejaPareja.jpg" />
                             <!-- description div -->
                             <div class='description' >
                                 <!-- description content -->
@@ -149,7 +149,7 @@ $apellido = $_SESSION['Apellidos']
                          <a href="juego_flip.php">
                         <div class='wrapper' id="menu">
                             <!-- image -->
-                            <img class="agran" src="img/ovejaPareja.jpg" />
+                            <img id="imagen_menu"class="agran" src="img/ovejaPareja.jpg" />
                             <!-- description div -->
                             <div class='description' >
                                 <!-- description content -->
@@ -165,7 +165,7 @@ $apellido = $_SESSION['Apellidos']
                          <a href="juego_oveja.php">
                         <div class='wrapper' id="menu">
                             <!-- image -->
-                            <img class="agran" src="img/ovejaPareja.jpg" />
+                            <img id="imagen_menu" class="agran" src="img/ovejaPareja.jpg" />
                             <!-- description div -->
                             <div class='description' >
                                 <!-- description content -->
@@ -181,7 +181,7 @@ $apellido = $_SESSION['Apellidos']
                          <a href="juego_adivina.php">
                         <div class='wrapper' id="menu">
                             <!-- image -->
-                            <img class="agran" src="img/ovejaPareja.jpg" />
+                            <img id="imagen_menu" class="agran" src="img/ovejaPareja.jpg" />
                             <!-- description div -->
                             <div class='description' >
                                 <!-- description content -->
@@ -197,7 +197,7 @@ $apellido = $_SESSION['Apellidos']
 
                         <div class='wrapper' id="menu">
                             <!-- image -->
-                            <img class="agran" src="img/ovejaPareja.jpg" />
+                            <img id="imagen_menu" class="agran" src="img/ovejaPareja.jpg" />
                             <!-- description div -->
                             <div class='description' >
                                 <!-- description content -->

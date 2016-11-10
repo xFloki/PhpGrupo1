@@ -39,21 +39,22 @@ html, body {
    
     
     position:absolute; /*El div será ubicado con relación a la pantalla*/
-     top:36%; /*Abajo deje un espacio de 0px*/
+     top:270px; /*Abajo deje un espacio de 0px*/
     right:0px; /*A la izquierda deje un espacio de 0px*/
     z-index:3;
      font-size: 100px;
+     margin-right: 5%;
 }
 
 #inferior-izquierda{
     
     
     position:absolute; /*El div será ubicado con relación a la pantalla*/
-    top:36%; /*A la izquierda deje un espacio de 0px*/
+    top:270px; /*A la izquierda deje un espacio de 0px*/
    left: 0px;
     z-index:3;
     font-size: 100px;
-    
+    margin-left: 5%;
 }
 #flecha{
     width: 50px;
