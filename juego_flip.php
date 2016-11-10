@@ -38,7 +38,7 @@
 
 //ahora voy a usar los datos en un ejemplo     
         ?>
-        <div id="main"  style="margin:5% 10% 0 10%" >
+        <div id="main"  style="margin:40px 10% 0 10%" >
             <div class="row  ">
                 <?php
 // Looping through the array:
@@ -68,7 +68,7 @@
 
                             for ($i = 0; $i < 8; $i++) {
                                 echo'
-             <div class="col-lg-3 col-md-6 col-xs-12 col-sm-6 text" style="height:300px; margin-top:15px;  "  >
+             <div class="col-lg-3 col-md-6 col-xs-12 col-sm-6 text" style="height:290px;   "  >
                 <div id="card-' . $i . '">
                     <br/>
                     <div class="front"> 
@@ -77,7 +77,7 @@
 
                     <div class="back"> 
                         <h3 style="margin:15px; color: #46b8da;">' . $imagenes[$contador][3] . '</h3>
-                      <p style="margin:18px;"> ' . $descripcion = substr($imagenes[$contador][1], 0, 170) . '
+                      <p style="margin:18px;"> ' . $descripcion = substr($imagenes[$contador][1], 0, 140) . '
                         <button style="color:white;"onclick="myFunction(\'' . $contador . '\')" type="button" class="btn btn-link" data-toggle="modal" data-target="#myModal">...</button></p>
 
                     </div> 
@@ -107,7 +107,7 @@
                                 for ($k = 0; $k < ($num_usuarios % 8); $k++) {
 
                                     echo'
-             <div class="col-lg-3 col-md-6 col-xs-12 col-sm-6" style="height:300px; margin-top:15px; "  >
+             <div class="col-lg-3 col-md-6 col-xs-12 col-sm-6" style="height:290px;   "  >
                 <div id="card-' . $k . '">
                     <br/>
                     <div class="front"> 
@@ -128,7 +128,7 @@
                                 for ($k = 0; $k < (8-($num_usuarios % 8)); $k++) {
 
                                     echo'
-             <div class="col-lg-3 col-md-6 col-xs-12 col-sm-6" style="height:300px; margin-top:15px;  "   >
+             <div class="col-lg-3 col-md-6 col-xs-12 col-sm-6" style="height:290px;   "   >
                 <div id="card-' . $k . '">
                     <br/>
                    
@@ -160,15 +160,7 @@
 
 
 
-                    <div id="inferior-izquierda" href="#myCarousel" data-slide="prev">
-                       
-                        <a id="flecha" style="margin-left:20px;"  ><b>&lsaquo;</b></a>
-                        
-                 
-                    </div>
-                    <div id="inferior-derecha" href="#myCarousel" data-slide="next">
-                        <a id="flecha" style="margin-right:20px;" ><b>&rsaquo;</b></a>
-                    </div>
+                
 
 
 
@@ -193,7 +185,15 @@
                 </div>
             </div>
         </div>
-
+    <div id="inferior-izquierda" href="#myCarousel" data-slide="prev">
+                       
+                        <a id="flecha" style="margin-left:20px;"  ><b>&lsaquo;</b></a>
+                        
+                 
+                    </div>
+                    <div id="inferior-derecha" href="#myCarousel" data-slide="next">
+                        <a id="flecha" style="margin-right:20px;" ><b>&rsaquo;</b></a>
+                    </div>
     </body>
 
     <script src="js/jquery-3.1.0.min.js"></script>

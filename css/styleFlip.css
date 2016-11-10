@@ -22,20 +22,11 @@ html, body {
 
     width: 220px;
     height: 220px;
-   
+   padding: 10px;
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 5px;
     box-shadow: 0px 1px 6px rgba(0,0,0, 0.4);
-    margin-left: 10%;
- 
     color:white;
-   
-
-
-   
-
-     
-  
 
 }
 .img2{
@@ -48,9 +39,8 @@ html, body {
    
     
     position:absolute; /*El div será ubicado con relación a la pantalla*/
-     top:34%; /*Abajo deje un espacio de 0px*/
+     top:36%; /*Abajo deje un espacio de 0px*/
     right:0px; /*A la izquierda deje un espacio de 0px*/
-    
     z-index:3;
      font-size: 100px;
 }
@@ -59,9 +49,8 @@ html, body {
     
     
     position:absolute; /*El div será ubicado con relación a la pantalla*/
-    top:34%; /*A la izquierda deje un espacio de 0px*/
+    top:36%; /*A la izquierda deje un espacio de 0px*/
    left: 0px;
-
     z-index:3;
     font-size: 100px;
     
