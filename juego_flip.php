@@ -191,8 +191,8 @@
                         
                  
                     </div>
-                    <div id="inferior-derecha" href="#myCarousel" data-slide="next">
-                        <a id="flecha" style="margin-right:20px;" ><b>&rsaquo;</b></a>
+                    <div class id="inferior-derecha" href="#myCarousel" data-slide="next">
+                        <a id="flecha" style="margin-right:20px; " ><b>&rsaquo;</b></a>
                     </div>
     </body>
 
