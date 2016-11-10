@@ -81,10 +81,8 @@ shuffle($imagenes);
 <body>
     
   <h1 style="color:white;">Juego Cada Oveja Con su Pareja</h1>
-   <br>
-   
-   
-  
+   <br>  <br>
+ 
   <div id="main" role="main">
     
     <div id="tutorial-memorygame" class="quizy-memorygame">

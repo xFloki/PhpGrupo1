@@ -44,8 +44,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                                        onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}"><a href="#" class=" icon lock"></a>
 					</li>
 					<div class="p-container">
-                                            <input id="remember" type="checkbox" checked="false" >
-                                               Remember Me
+                                            <input id="remember" type="checkbox" style="width: 22px; height: 22px;">  Remember Me
                                                 <br/><br/>
                                                
                                                              
