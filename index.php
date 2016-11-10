@@ -1,55 +1,71 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 
-<!--
+
 Categoria Imagenes
 JuegoOveja = 1
-EstudioFlip = 2
+EstudioFlip = 2-->
+
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
 -->
-
-
+<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Prueba de PHP</title>
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="css/quizymemorygame.css" />
-        <style>
-            body {
-                background: black;
-                background-image: url("img/tile2.png");
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container" id="centro">
-            <div class="row">
-                 <div class="col-md-12"><h2 class="text-center" style="color:white;">EJEMPLO DE INICIO DE SESIÓN EN PHP</h2></div>
-            </div>
-            <div class="row">
-                <div class="col-md-4"></div>
-                <div class="col-md-4">
-<!--                    <form action="index2.php" method="post">-->
-                  
-                        <br>
-                        <input id="usuario_nombre" class="form-control" type="text" placeholder="Usuario">
-                        <br>
-                        <input id="usuario_clave"  class="form-control" type="password" placeholder="Contraseña">
-                         <br>
-                            <p style="color:white;"> <input id="recordar" type="checkbox"  > Recuérdame </p>
-                        
-                        
-                        
-                         <button class="btn btn-success btn-block" onclick="chequeaPass();"> Entrar</button>
-<!--                  </form>-->
-
-
-                </div>
-                <div class="col-md-4"></div>
-            </div>
-        </div>
+	
+<head>
+	<title>The Login-Animated Website Template | Home :: w3layouts</title>
+		<meta charset="utf-8">
+		<link href="css/stylex.css" rel='stylesheet' type='text/css' />
+               <link rel="stylesheet" href="css/bootstrap.min.css"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+		<!--webfonts-->
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:600italic,400,300,600,700' rel='stylesheet' type='text/css'>
+		<!--//webfonts-->
+</head>
+<body>
+    <div class="main"  id="centro">
+				 <!-----start-main---->
+				<div class="login-form">
+					<div class="head">
+						<img src="images/mem2.png" alt=""/>
+						
+					</div>
+				<form>
+					<li>
+						<input id="usuario_nombre" type="text" class="text" value="USERNAME" 
+                                                       onfocus="this.value = '';"onblur="if (this.value == '') {this.value = 'USERNAME';}" ><a href="#" class=" icon user"></a>
+					</li>
+					<li>
+						<input id="usuario_clave" type="password" value="Password" 
+                                                       onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}"><a href="#" class=" icon lock"></a>
+					</li>
+					<div class="p-container">
+                                            <input id="remember" type="checkbox" checked="false" >
+                                               Remember Me
+                                                <br/><br/>
+                                               
+                                                             
+							<div class="clear text-center">
+                                                            <button type="button" class="btn btn-success btn-lg btn-block"
+                                                                    onclick="chequeaPass()">Entrar</button>
+                                                        </div>
+                                                        
+					</div>
+				</form>
+			</div>
+			
+                  </div>
+				
+                         
+		 		
+        
+        
         <?php
         
-
 if (!isset($_SESSION)) {session_start();}
 //        $nombre = $_SESSION['Nombre'];
          if (isset($_COOKIE['DNI']) and isset($_COOKIE['password'])) {
@@ -65,9 +81,8 @@ if (!isset($_SESSION)) {session_start();}
                     
         }
         
-
         ?>
-    </body>
+   
 
     
     <script src="js/jquery-3.1.0.min.js" /></script><!--
@@ -78,18 +93,18 @@ if (!isset($_SESSION)) {session_start();}
           function chequeaPass(){
               var _usuario_nombre = $('#usuario_nombre').val();
               var _usuario_clave = $('#usuario_clave').val();            
-               if( document.getElementById('recordar').checked == true){
-                    var _recordar = 'on';
-                } else {
-                    var _recordar = 'off';
-                }
-              console.log(_recordar);
-              console.log(_usuario_nombre);
+//               if( document.getElementById('recordar').checked == true){
+//                    var _recordar = 'on';
+//                } else {
+//                    var _recordar = 'off';
+//                }
+             
+             
             $('#centro').load("login.php",{
                
-                recordar : _recordar,
-                usuario_nombre : _usuario_nombre,
-                usuario_clave:_usuario_clave
+//                recordar : _recordar,
+                usuario_nombre : "1",
+                usuario_clave: 4
             });
               
           }

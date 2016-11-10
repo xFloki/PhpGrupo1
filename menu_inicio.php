@@ -216,9 +216,7 @@ $apellido = $_SESSION['Apellidos']
     </div>
 </body>
 <script>
-  function loadOveja {
-     $('#centro1').load("juego_oveja.php");
-  }
+  
 
     $('.wrapper').hover(
             function () {
