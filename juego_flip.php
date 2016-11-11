@@ -76,7 +76,7 @@
                     </div> 
 
                     <div class="back"> 
-                        <h3 style="margin:15px; color: #46b8da; line-height:4px">' . $imagenes[$contador][3] . '</h3>
+                        <h5 style="margin:15px; color: #46b8da;">' . $imagenes[$contador][3] . '</h5>
                       <p style="margin:18px;"> ' . $descripcion = substr($imagenes[$contador][1], 0, 140) . '
                         <button style="color:white;"onclick="myFunction(\'' . $contador . '\')" type="button" class="btn btn-link" data-toggle="modal" data-target="#myModal">...</button></p>
 
@@ -115,7 +115,7 @@
                     </div> 
 
                     <div class="back"> 
-                        <h3 style="margin:15px; color: #46b8da; line-height:4px">' . $imagenes[$contador][3] . '</h3>
+                        <h5 style="margin:15px; color: #46b8da; ">' . $imagenes[$contador][3] . '</h5>
                       <p> ' . $descripcion = substr($imagenes[$contador][1], 0, 200) . '
                         <button onclick="myFunction(\'' . $contador . '\')" type="button" class="btn btn-link" data-toggle="modal" data-target="#myModal-' . $i . '">...</button></p>
                     </div> 
