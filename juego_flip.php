@@ -117,7 +117,7 @@
                     <div class="back"> 
                         <h5 style="margin:15px; color: #46b8da; ">' . $imagenes[$contador][3] . '</h5>
                       <p> ' . $descripcion = substr($imagenes[$contador][1], 0, 200) . '
-                        <button onclick="myFunction(\'' . $contador . '\')" type="button" class="btn btn-link" data-toggle="modal" data-target="#myModal-' . $i . '">...</button></p>
+                        <button onclick="myFunction(\'' . $contador . '\')" type="button" class="btn btn-link" data-toggle="modal" data-target="#myModal">...</button></p>
                     </div> 
                 </div>
             </div>
@@ -201,10 +201,11 @@
     <script src="js/bootstrap.js" ></script>
 
     <script>
-        $("[id^=card-]").flip({
+         $("[id^=card-]").flip({
             axis: 'x',
-            trigger: 'click',
+           
             autoSize: false});
+
 
     </script>
     <script>
