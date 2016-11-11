@@ -146,14 +146,14 @@ $apellido = $_SESSION['Apellidos']
 
                     </li>
                     <li>
-                         <a href="juego_flip.php">
-                        <div class='wrapper' id="menu">
+                        
+                        <div class='wrapper' id="menu" onclick="$('div#centro1').load('juego_quiz/juego_quiz.php')">
                             <!-- image -->
                             <img id="imagen_menu"class="agran" src="img/ovejaPareja.jpg" />
                             <!-- description div -->
                             <div class='description' >
                                 <!-- description content -->
-                                <p class='description_content'>Cada oveja con su pareja</p>
+                                <p class='description_content'>NACIONAL SOCIALISMO</p>
                                 <!-- end description content -->
                             </div>
                             <!-- end description div -->
