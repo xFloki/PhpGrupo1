@@ -44,6 +44,8 @@ if ($numero_dnis > 0) {
         $_SESSION['Nombre'] = $Nombre;
         $_SESSION['Email'] = $r['Email'];
         $_SESSION['Apellidos'] = $r['Apellidos'];
+            $_SESSION['Nacimiento'] = $r['Nacimiento'];
+        
         
         require 'menu_inicio.php';        
        

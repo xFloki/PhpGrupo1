@@ -42,7 +42,7 @@ $apellido = $_SESSION['Apellidos']
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="#">Home</a></li>
                         <li><a href="#about">About</a></li>
-                        <li><a href="#" onclick="loadOveja()">oveja</a></li>
+                        <li><a href="#" onclick="$('div#centro1').load('juego_oveja.php')">oveja</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
                             <ul class="dropdown-menu">
@@ -64,8 +64,8 @@ $apellido = $_SESSION['Apellidos']
                             <ul class="dropdown-menu">
                                  <li><a href="#">Conectado como <?php echo $nombre; echo ' '; ?><?php echo $apellido; ?></a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="#" onclick="loadOveja()">Tú Perfil</a></li>
-                                <li><a href="#">Ayuda</a></li>
+                                <li><a href="#" onclick="$('div#centro1').load('usuario_progreso.php')">Tú Perfil</a></li>
+                                <li><a href="#" onclick="$('div#centro1').load('mensaje_error.php')">Ayuda</a></li>
                                 <li role="separator" class="divider"></li>                                
                                 <li><a href="#">Opciones</a></li>
                                 <li><a href="./">Cerrar Sesión</a></li>
@@ -162,8 +162,7 @@ $apellido = $_SESSION['Apellidos']
 
                     </li>
                     <li>
-                         <a href="juego_oveja.php">
-                        <div class='wrapper' id="menu">
+                        <div class='wrapper' id="menu" onclick="$('div#centro1').load('usuario_progreso.php')">
                             <!-- image -->
                             <img id="imagen_menu" class="agran" src="img/ovejaPareja.jpg" />
                             <!-- description div -->

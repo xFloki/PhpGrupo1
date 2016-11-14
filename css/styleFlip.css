@@ -1,3 +1,7 @@
+body {
+    background:url(../img/background.png)  no-repeat center fixed;
+}
+
 html, body, div, ul {
     box-sizing: border-box;
 }
@@ -7,19 +11,14 @@ html, body {
     padding: 0;
 }
 
+
 .card {
   
-    
-   
-
-
 }
 
 
 
 .front, .back {
-
-
     width: 220px;
     height: 220px;
    padding: 10px;
@@ -27,8 +26,8 @@ html, body {
     border-radius: 5px;
     box-shadow: 0px 1px 6px rgba(0,0,0, 0.4);
     color:white;
-
 }
+
 .img2{
 
     width:100%;
