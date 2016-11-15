@@ -1,95 +1,113 @@
+<!--<!DOCTYPE html>
 
 
-<?php
-session_start();
-include ('./misfunciones.php');
-
- 
+Categoria Imagenes
+JuegoOveja = 1
+EstudioFlip = 2-->
 
 
-    
-    ?>
-    
-    
-
-
-?>
-
-
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title></title>
-
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/usuarioperfil.css">
-        <style>
-
-        </style>
-
-    </head>
-    <body>
-
-
-        <div class="container">
-            <div class="row">
-                <div class="col-md-5  toppad  pull-right col-md-offset-3 ">
-                    <br>
-                    <p class=" text-info"<span id="servertime"></span></p>
-              
-
+	
+<head>
+	<title>The Login-Animated Website Template | Home :: w3layouts</title>
+		<meta charset="utf-8">
+		<link href="css/stylex.css" rel='stylesheet' type='text/css' />
+               <link rel="stylesheet" href="css/bootstrap.min.css"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+		<!--webfonts-->
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:600italic,400,300,600,700' rel='stylesheet' type='text/css'>
+		<!--//webfonts-->
+</head>
+<body>
+    <div class="main"  id="centro">
+				 <!-----start-main---->
+				<div class="login-form">
+					<div class="head">
+                                            <img   src="images/mem2.png" alt=""/>
+						
+					</div>
+				<form>
+					<li class="loginError">
+						<input  id="usuario_nombre" type="text" class="text" value="USERNAME"  
+                                                       onfocus="this.value = '';"onblur="if (this.value == '') {this.value = 'USERNAME';}" ><a href="#" class=" icon user"></a>
+					</li>
+					<li  class="loginError" >
+                                            <input   id="usuario_clave" type="password" value="Password" 
+                                                       onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}"><a href="#" class=" icon lock"></a>
+					</li>
+					<div class="p-container">
+                                            <input id="remember" type="checkbox" style="width: 22px; height: 22px;">  Remember Me
+                                                <br/><br/>
+                                               
+                                                             
+							<div class="clear text-center">
+                                                            <button type="button" class="btn btn-success btn-lg btn-block"
+                                                                    onclick="chequeaPass()">Entrar</button>
+                                                        </div>
                                                         
-            
-                                            
-
-            
-            
-        </div> </div> </div>
+					</div>
+				</form>
+			</div>
+			
+                  </div>
+				
+                         
+		 		
         
-     
- 
+        
+        <?php
+        
+if (!isset($_SESSION)) {session_start();}
+//        $nombre = $_SESSION['Nombre'];
+         if (isset($_COOKIE['DNI']) and isset($_COOKIE['password'])) {
+            $nombre = $_COOKIE['DNI'];
+            $password = $_COOKIE['password']; 
+          
+            
+            echo  "<script>
+                document.getElementById('usuario_nombre').value = '$nombre';
+                 document.getElementById('usuario_clave').value = '$password';
+                document.getElementById('recordar').checked = true;
+                </script>";
+                    
+        }
+        
+        ?>
+   
 
-     
-
-        <script type="text/javascript">
-
-// Current Server Time script (SSI or PHP)- By JavaScriptKit.com (http://www.javascriptkit.com)
-// For this and over 400+ free scripts, visit JavaScript Kit- http://www.javascriptkit.com/
-// This notice must stay intact for use.
-
-//Depending on whether your page supports SSI (.shtml) or PHP (.php), UNCOMMENT the line below your page supports and COMMENT the one it does not:
-//Default is that SSI method is uncommented, and PHP is commented:
-
-//var currenttime = '<!--#config timefmt="%B %d, %Y %H:%M:%S"--><!--#echo var="DATE_LOCAL" -->' //SSI method of getting server date
-    var currenttime = '<? print date("F d, Y H:i:s", time())?>' //PHP method of getting server date
-
-///////////Stop editting here/////////////////////////////////
-
-var montharray=new Array("January","February","March","April","May","June","July","August","September","October","November","December")
-var serverdate=new Date(currenttime)
-
-function padlength(what){
-var output=(what.toString().length==1)? "0"+what : what
-return output
-}
-
-function displaytime(){
-serverdate.setSeconds(serverdate.getSeconds()+1)
-var datestring=montharray[serverdate.getMonth()]+" "+padlength(serverdate.getDate())+", "+serverdate.getFullYear()
-var timestring=padlength(serverdate.getHours())+":"+padlength(serverdate.getMinutes())+":"+padlength(serverdate.getSeconds())
-document.getElementById("servertime").innerHTML=datestring+" "+timestring
-}
-
-window.onload=function(){
-setInterval("displaytime()", 1000)
-}
-
-</script>
-
-
-
-
-    </body>
+    
+    <script src="js/jquery-3.1.0.min.js" /></script><!--
+   <script src="js/jquery-ui-1.8.17.custom.min.js"></script>-->
+    <script src="js/bootstrap.min.js"></script>
+    
+      <script>
+          function chequeaPass(){
+              var _usuario_nombre = $('#usuario_nombre').val();
+              var _usuario_clave = $('#usuario_clave').val();            
+//               if( document.getElementById('recordar').checked == true){
+//                    var _recordar = 'on';
+//                } else {
+//                    var _recordar = 'off';
+//                }
+             
+             
+            $('#centro').load("login.php",{
+               
+//                recordar : _recordar,
+                usuario_nombre : _usuario_nombre,
+                usuario_clave: _usuario_clave
+            });
+              
+          }
+      </script>
 </html>
 
 

@@ -55,11 +55,11 @@ if ($numero_dnis > 0) {
          $_SESSION['error'] = "La contraseña o el usuario no son correctos";
          
          
-       header('location: index.php');
+       header('location: mensaje_error.php');
         
     }
 } else {
-    require 'index.php';
+    require 'mesnaje_error.php';
 }
 ?>
         

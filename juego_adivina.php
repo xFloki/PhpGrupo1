@@ -1,59 +1,93 @@
-<!DOCTYPE html>
+
+
+<?php
+session_start();
+include ('./misfunciones.php');
+
+ 
+
+
+    
+    ?>
+    
+    
+
+
+?>
+
+
 <html>
-<head>
-<meta charset="UTF-8">
-<style>
-div#test{ border:#000 1px solid; padding:10px 40px 40px 40px; }
-</style>
-<script>
-var pos = 0, test, test_status, question, choice, choices, chA, chB, chC, correct = 0;
-var questions = [
-    [ "What is 10 + 4?", "12", "14", "16", "B" ],
-	[ "What is 20 - 9?", "7", "13", "11", "C" ],
-	[ "What is 7 x 3?", "21", "24", "25", "A" ],
-	[ "What is 8 / 2?", "10", "2", "4", "C" ]
-];
-function _(x){
-	return document.getElementById(x);
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/usuarioperfil.css">
+        <style>
+
+        </style>
+
+    </head>
+    <body>
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5  toppad  pull-right col-md-offset-3 ">
+                    <br>
+                    <p class=" text-info"<span id="servertime"></span></p>
+              
+
+                                                        
+            
+                                            
+
+            
+            
+        </div> </div> </div>
+        
+     
+ 
+
+     
+
+        <script type="text/javascript">
+
+// Current Server Time script (SSI or PHP)- By JavaScriptKit.com (http://www.javascriptkit.com)
+// For this and over 400+ free scripts, visit JavaScript Kit- http://www.javascriptkit.com/
+// This notice must stay intact for use.
+
+//Depending on whether your page supports SSI (.shtml) or PHP (.php), UNCOMMENT the line below your page supports and COMMENT the one it does not:
+//Default is that SSI method is uncommented, and PHP is commented:
+
+//var currenttime = '<!--#config timefmt="%B %d, %Y %H:%M:%S"--><!--#echo var="DATE_LOCAL" -->' //SSI method of getting server date
+    var currenttime = '<? print date("F d, Y H:i:s", time())?>' //PHP method of getting server date
+
+///////////Stop editting here/////////////////////////////////
+
+var montharray=new Array("January","February","March","April","May","June","July","August","September","October","November","December")
+var serverdate=new Date(currenttime)
+
+function padlength(what){
+var output=(what.toString().length==1)? "0"+what : what
+return output
 }
-function renderQuestion(){
-	test = _("test");
-	if(pos >= questions.length){
-		test.innerHTML = "<h2>You got "+correct+" of "+questions.length+" questions correct</h2>";
-		_("test_status").innerHTML = "Test Completed";
-		pos = 0;
-		correct = 0;
-		return false;
-	}
-	_("test_status").innerHTML = "Question "+(pos+1)+" of "+questions.length;
-	question = questions[pos][0];
-	chA = questions[pos][1];
-	chB = questions[pos][2];
-	chC = questions[pos][3];
-	test.innerHTML = "<h3>"+question+"</h3>";
-	test.innerHTML += "<input type='radio' name='choices' value='A'> "+chA+"<br>";
-	test.innerHTML += "<input type='radio' name='choices' value='B'> "+chB+"<br>";
-	test.innerHTML += "<input type='radio' name='choices' value='C'> "+chC+"<br><br>";
-	test.innerHTML += "<button onclick='checkAnswer()'>Submit Answer</button>";
+
+function displaytime(){
+serverdate.setSeconds(serverdate.getSeconds()+1)
+var datestring=montharray[serverdate.getMonth()]+" "+padlength(serverdate.getDate())+", "+serverdate.getFullYear()
+var timestring=padlength(serverdate.getHours())+":"+padlength(serverdate.getMinutes())+":"+padlength(serverdate.getSeconds())
+document.getElementById("servertime").innerHTML=datestring+" "+timestring
 }
-function checkAnswer(){
-	choices = document.getElementsByName("choices");
-	for(var i=0; i<choices.length; i++){
-		if(choices[i].checked){
-			choice = choices[i].value;
-		}
-	}
-	if(choice == questions[pos][4]){
-		correct++;
-	}
-	pos++;
-	renderQuestion();
+
+window.onload=function(){
+setInterval("displaytime()", 1000)
 }
-window.addEventListener("load", renderQuestion, false);
+
 </script>
-</head>
-<body>
-<h2 id="test_status"></h2>
-<div id="test"></div>
-</body>
+
+
+
+
+    </body>
 </html>

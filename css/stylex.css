@@ -47,7 +47,7 @@ body{
 .head {
 	position: absolute ;
 	top:-15%;
-	left: 40%;
+	left: 36%;
 }
 .head img {
 	border-radius:50%;
@@ -99,8 +99,17 @@ input[type="text"], input[type="password"] {
 	border:none;
 	font-weight:600;
 	}
+
+ form li.loginError{
+	border:1px solid #FF0000;
+	 box-shadow: 0 0 1em #FF0000;
+	 -webkit-box-shadow: 0 0 1em #FF0000;
+	 -o-box-shadow: 0 0 1em #FF0000;
+	 -moz-box-shadow: 0 0 1em #FF0000;
+}        
+        
 form li:hover{
-	border:1px solid #40A9DF;
+	border:1px solid #40A9DR;
 	 box-shadow: 0 0 1em #40A9DF;
 	 -webkit-box-shadow: 0 0 1em #40A9DF;
 	 -o-box-shadow: 0 0 1em #40A9DF;
