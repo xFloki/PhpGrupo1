@@ -2,8 +2,7 @@
     <head>
 
         <title></title>
-        <link rel="stylesheet" href="css/bootstrap.min.css"  />
-        <link rel="stylesheet" href="css/styleAdmin.css"  />
+
 
 
 
@@ -12,14 +11,14 @@
 
     <body>
 
-        <div id="main" style="margin:5% 10% 0 10%">
+        <div id="main" >
             <div id="div1">
 
                 <?php
                 include ('./misfunciones.php');
 
                 $mysqli = conectaBBDD();
-                $mysqli2 = conectaBBDD();
+               
 
 //// ejemplo de volcado de una query a un array en php
 ////creo el array
@@ -40,6 +39,7 @@
                 for ($i = 0; $i < $num_juegos; $i++) {
                     $r = $consulta_juegos->fetch_array();
 
+                     $usuario[$i][0] = $r['Nombre'];
                     $usuario[$i][1] = $r['Descripcion'];
                     $usuario[$i][3] = $r['Nombre_muestra'];
                 }
@@ -52,6 +52,7 @@
             <table class="table table-striped text-center" >
             <tr class="warning">
            
+<td></td>
                 <td><h4>Nombre</h4></td>
                 <td><h4>Descripcion</h4></td>
                 <td></td>
@@ -63,20 +64,29 @@
                 for ($i = 0; $i < $num_juegos; $i++) {
                     echo'<tr >
            
+ <td>
+            
+            <img  onerror="this.src=\'img/camara.png\';" data-toggle="dropdown" src="'
+                . $usuario[$i][0] . '" class="usuario img-thumbnail img-responsive "style="margin:8px;width:120px"  >
+                   
+            </td>
                      <td style="vertical-align: middle;" >' . $usuario[$i][3] . '</td>
                      <td style="vertical-align: middle;">' . substr($usuario[$i][1], 0, 80) . '
                          <button onclick="myFunction(\'' . $contador . '\')" type="button" class="btn btn-link" data-toggle="modal" data-target="#myModal">...</button>
+                         
 
 </td>
                  
                      <td style="vertical-align: middle;">
-                      <button type="button" class=" borrar btn btn-danger btn-sm" onclick="alerta(' . $i . ')" >
+                      
     
+                       <button  onclick="alertaBorrar('.$i.','.$usuario[$i][0].')" type="button" class=" borrar'.$contador.' btn btn-danger btn-sm" >
 
           <img src="img/papelera.png"style="width:15px;"> 
         </button>
 
                      </td>
+                     <td></td>
                          </tr>
                 
             ';
@@ -86,6 +96,7 @@
                 echo'
         </table>';
                 ?>
+                
                 <div class="modal fade" id="myModal" role="dialog">
                         <div class="modal-dialog modal-lg" >
                             <div class="modal-content">
@@ -101,7 +112,8 @@
                                 </div>
                             </div>
                         </div>
-                    </div>    
+                    </div> 
+                <div id="carga"></div>
             </div>
         </div>
     </body>
@@ -122,6 +134,23 @@
         ;
 
     </script>
+    <script>
+            function alertaBorrar(numero,_Nombre){
+                
+                $(document).on('click', ('.borrar'+numero), function (event) {
+        event.preventDefault();
+        $(this).closest('tr').hide('slow');
+        $('#carga').load('borraFilaJuego.php', {
+                    
+                    Nombre: _Nombre,
+                    
+                });
+        
+    });
+
+               
+            }
+        </script>
 </html>
 
 

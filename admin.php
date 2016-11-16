@@ -25,7 +25,7 @@ and open the template in the editor.
             include ('./misfunciones.php');
 
             $mysqli = conectaBBDD();
-            $mysqli2 = conectaBBDD();
+           
             
 //// ejemplo de volcado de una query a un array en php
 ////creo el array
@@ -71,7 +71,7 @@ and open the template in the editor.
             
             ';
             for ($i = 0; $i < $num_juegos; $i++) {
-                echo'<tr  id="botonBorrar'.$i.';" >
+                echo'<tr   >
             <td>
             
             <img onclick="chequeaDNI('.$i.')" onerror="this.src=\'img/camara.png\';" data-toggle="dropdown" src="img/'
