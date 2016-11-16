@@ -59,12 +59,12 @@ Autor: Alejandro Dietta Martin 1ºDAM
     background-size: cover;
 }
 </style>
-
+    
         <div class="container" >
             <div class="row">
                 <div class="col-md-3"></div>
                 <div class="col-md-6">
-                    <br><br>
+                    <br><br><br><br><br>
                     <h3 align="center" id="enunciado"  ></h3>
                     <br><br>
                     <button id="r1" class=" btn btn-block  btn-primary-outline" ></button> 
