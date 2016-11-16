@@ -5,11 +5,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
         <title>Flip</title>
         <link rel="stylesheet" href="css/styleFlip.css"/> 
-        <link rel="stylesheet" href="css/bootstrap.min.css"  />
+<!--        <link rel="stylesheet" href="css/bootstrap.min.css"  />-->
 
 
     </head>
     <body background="img/background.png">
+        <br></br>
+     
+         <br></br>
+          <br></br>
         <?php
         include ('./misfunciones.php');
 
@@ -117,7 +121,7 @@
                     <div class="back"> 
                         <h5 style="margin:15px; color: #46b8da; ">' . $imagenes[$contador][3] . '</h5>
                       <p> ' . $descripcion = substr($imagenes[$contador][1], 0, 200) . '
-                        <button onclick="myFunction(\'' . $contador . '\')" type="button" class="btn btn-link" data-toggle="modal" data-target="#myModal">...</button></p>
+                        <button style="color:white;" onclick="myFunction(\'' . $contador . '\')" type="button" class="btn btn-link" data-toggle="modal" data-target="#myModal">...</button></p>
                     </div> 
                 </div>
             </div>

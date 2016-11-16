@@ -9,11 +9,24 @@
     <body>
         <div class="container" id="centro">
             <div class="row">
-                 <div class="col-md-12">
+                 <div class="col-md-4">
                      <div id="posicionY"></div><br>
                      <div id="posicionX"></div>
-                     <div id="etiqueta01" class="btn btn-primary"
-                             style="position: absolute; top:200px; left:100px;">ETIQUETA 1</div>
+                     <div id="1" class="btn btn-primary arrastrar"
+                             style="position: absolute; top:200px; left:100px; z-index: 1;">ETIQUETA 1</div>
+                             
+                             <div id="1" class="btn btn-primary arrastrar"
+                             style="position: absolute; top:200px; left:100px; z-index: 1;">ETIQUETA 2</div>
+                 </div>
+                
+                <div class="col-md-4">
+                    
+                 </div>
+                
+                <div class="col-md-4">
+                    <div id="1" class="droppablee"
+                             style="position: relative; top:200px; left:100px; background: #419641; height: 100px; width: 200px;">Contenedor</div>
+                     
                  </div>
             </div>
                     </div>
@@ -24,32 +37,51 @@
     <script src="js/jquery-ui.min.js"></script>
      <script src="js/bootstrap.min.js"></script>
     <script>
-        $('#etiqueta01').draggable({
+        
+    
+    var identificador;
+    
+    $('.arrastrar').draggable({
             drag: function(){
                 var posicion = $(this).position();
                   $('#posicionY').html(posicion.top);
                   $('#posicionX').html(posicion.left);
+                   identificador = $(this).attr('id');
             },
             stop: function(){
                 var posicion = $(this).position(); 
-                var identificador = $(this).attr('id');
-                compruebaAcierto(identificador, posicion);
-                console.log(identificador);
-               
+                
             }
             
         });
         
-        function compruebaAcierto(_id, _posicion ){
+        $(".droppablee").droppable({
+   drop: function( evento, ui ) {
+       
+       if(identificador === $(this).attr('id')){
+           
+           var posicion = $(this).position();
+//            alert( "left: " + posicion.left + ", top: " + posicion.top );
+//            $(this).html("Lo soltaste!!!");
+//            $(this).
+                    
+            compruebaAcierto(identificador, posicion.top);        
+           
+           
+       }
+       
+     
+   }
+});
+        
+        function compruebaAcierto(_id, _contenedorTop){
             var altura = window.innerHeight;
              console.log(altura);
-             if(_posicion.top < altura/4){
-                    $('#' + _id).removeClass("btn-primary").addClass("btn-danger");
-                    $('#' + _id).animate({ left:"100px", top:"200px"});
-                } else if (_posicion.top >= altura/4 && _posicion < altura ){
+             
                     
+                    $('.arrastrar').animate({top: _contenedorTop});
                 }
-        }
+        
     </script>
     
 </html>
