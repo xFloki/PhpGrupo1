@@ -157,7 +157,7 @@ and open the template in the editor.
                 
                 $(document).on('click', ('.borrar'+numero), function (event) {
         event.preventDefault();
-        $(this).closest('tr').remove();
+        $(this).closest('tr').hide('slow');
         $('#carga').load('borraFila.php', {
                     
                     DNI: _DNI,
