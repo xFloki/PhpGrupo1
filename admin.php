@@ -83,14 +83,14 @@ and open the template in the editor.
                      <td style="vertical-align: middle;">' . $usuario[$i ][3] . '</td>
                      <td style="vertical-align: middle;">' . $usuario[$i ][4] . '</td>
                      <td style="vertical-align: middle;">
-                      <button  onclick="alertaBorrar('.$i.','.$usuario[$i][0].')" type="button" class=" borrar'.$i.' btn btn-danger btn-sm" >
+                      <button   type="button" class=" borrar'.$i.' btn btn-danger btn-sm" onclick="alertaBorrar('.$i.',\'' .$usuario[$i][0].  '\')">
     
           <img src="img/papelera.png"style="width:15px;"> 
         </button>
 
                      </td>
                      <td style="vertical-align: middle;">
-                      <button type="button" class=" borrar btn btn-warning btn-sm" onclick="alerta('.$i.')" >
+                      <button type="button" class=" borrar btn btn-warning btn-sm" onclick="myFunctionModal(\'' . $contador . '\')"data-toggle="modal" data-target="#myModal" >
     
           <img src="img/lapiz.png"style="width:15px;"> 
         </button>
@@ -108,20 +108,35 @@ and open the template in the editor.
                
            
         
-                  
+              <div id="carga"></div>    
             </div>
-            <div id="carga"></div>
+            <div class="modal fade" id="myModal" role="dialog">
+                        <div class="modal-dialog modal-lg" >
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 id="titulo_modal" class="modal-title"></h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p id="descripcion_modal"></p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button  type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+            
         </div>
     </body>
        <script src="js/jquery-3.1.0.min.js"></script>
+        <script src="js/bootstrap.js" ></script>
    
 
         <script>
 
 
         function juego1() {
-       
-            
      $("#div1").load("juego_flip_admin.php",{
            
             
@@ -155,12 +170,12 @@ and open the template in the editor.
       <script>
             function alertaBorrar(numero,_DNI){
                 
-                $(document).on('click', ('.borrar'+numero), function (event) {
+        $(document).on('click', '.borrar'+numero, function (event) {
         event.preventDefault();
         $(this).closest('tr').hide('slow');
-        $('#carga').load('borraFila.php', {
+        $('#carga').load("borraFila.php", {
                     
-                    DNI: _DNI,
+                    DNI: _DNI
                     
                 });
         
@@ -170,6 +185,45 @@ and open the template in the editor.
             }
         </script>
         
+         <script>
+
+
+        function myFunctionModal(_num) {
+        var lista=<?php echo json_encode($usuario);?>  
+        $('#titulo_modal').html(
+                lista[_num][0]+"     "+ lista[_num][2]+" "+ lista[_num][3]
+            );
+    $('#descripcion_modal').html(
+                "<h3>DNI: </h3> <input class='form-control input-sm' id='inputsm' type='text'  value='"+lista[_num][0]+"'><br/>\n\
+    <h3>Nombre: </h3> <input class='form-control input-sm' id='inputsm' type='text'  value='"+lista[_num][2]+"'><br/>\n\
+<h3>Apellidos: </h3> <input class='form-control input-sm' id='inputsm' type='text'  value='"+lista[_num][3]+"'><br/>\n\
+<h3>Email: </h3> <input class='form-control input-sm' id='inputsm' type='text'  value='"+lista[_num][4]+"'><br/>\n\
+ <button  type='button' class='btn btn-success' onclick='actualizaDatos()'>Aceptar</button>"
+            );
+        }
+        ;
+
+    </script>
+    <script>
+            
+            $('#botonInicio').click(function(){
+                var _nombreUsuario = $('#nombreUsuario').val();
+                var _pass = $('#pass').val();
+                
+                $('#centro').load('login.php',{
+                    nombreUsuario: _nombreUsuario,
+                    pass : _pass
+                });
+            });
+            
+            
+            function borra(numero, _idEquipo){
+                $('#boton_'+numero).hide("slow");
+                $('#carga').load('borraFila.php', {
+                    idEquipo: _idEquipo
+                });
+            }
+        </script>
 
     
  

@@ -78,7 +78,7 @@
                      <td style="vertical-align: middle;">
                       
     
-                       <button  onclick="alertaBorrar1('.$i.','.$usuario[$i][0].')" type="button" class=" borrar'.$contador.' btn btn-danger btn-sm" >
+                       <button  type="button" class="borrarJuego-'.$contador.' btn btn-danger btn-sm"  onclick="alertaBorrar1('.$i.',\'' .$usuario[$i][0].  '\')">
 
           <img src="img/papelera.png"style="width:15px;"> 
         </button>
@@ -111,12 +111,14 @@
                             </div>
                         </div>
                     </div> 
-                <div id="carga"></div>
+                
             </div>
+            <div id="borrador"></div>
         </div>
     </body>
-    
-    <script src="js/bootstrap.js" ></script>
+ 
+   
+     
       
      <script>
 
@@ -136,12 +138,12 @@
     <script>
             function alertaBorrar1(numero,_Nombre){
                 
-        $(document).on('click', ('.borrar'+numero), function (event) {
+        $(document).on('click', ('.borrarJuego-'+numero), function (event) {
         event.preventDefault();
         $(this).closest('tr').hide('slow');
-        $('#carga').load('borraFilaJuego.php', {
+        $("#borrador").load("borraFilaJuego.php",{
                     
-                    Nombre: _Nombre,
+                    Nombre: _Nombre
                     
                 });
         
