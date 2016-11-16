@@ -36,6 +36,13 @@ include('./funciones_quiz.php');
             $r3 = rand(3,6); while ($r3 == $r1 || $r3 == $r2){$r3 = rand(3,6);}
             $r4 = rand(3,6); while ($r4 == $r1 || $r4 == $r2 || $r4 == $r3){$r4 = rand(3,6);}
             ?>
+<style type="text/css">
+    body{
+    
+    background:url(img/background.png)  no-repeat center fixed;
+    background-size: cover;
+}
+</style>
         
 
 <div class="container">

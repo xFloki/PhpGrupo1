@@ -52,6 +52,13 @@ Autor: Alejandro Dietta Martin 1ºDAM
 //                echo "$numero ";
 //            }
         ?>
+        
+        <style type="text/css">
+    body{  
+    background:url(img/background.png)  no-repeat center fixed;
+    background-size: cover;
+}
+</style>
 
         <div class="container" >
             <div class="row">
@@ -60,7 +67,7 @@ Autor: Alejandro Dietta Martin 1ºDAM
                     <br><br>
                     <h3 align="center" id="enunciado"  ></h3>
                     <br><br>
-                    <button id="r1" class="btn btn-block  btn-primary-outline" ></button> 
+                    <button id="r1" class=" btn btn-block  btn-primary-outline" ></button> 
 
                     <button id="r2" class="btn btn-block  btn-primary-outline" ></button> 
 
@@ -121,9 +128,16 @@ Autor: Alejandro Dietta Martin 1ºDAM
                                 switch (n) {
                                     case 0:
                                         tema = <?php echo json_encode($listaTemas[0]); ?>;
+                                        // le he tenido que cambiar la propiedad de activo al los botones primary de tena
+                                        //ya que en safari no lo hacia de manera automatica
+//                                        document.getElementById("r1").className += "btn btn-block  btn-primary-outline active";
+                                        $('#r1').addClass("active");
+                                         $('#r2').removeClass("active");
                                         break;
-                                    case 1:
+                                    case 1:                                      
                                         tema = <?php echo json_encode($listaTemas[1]); ?>;
+                                         $('#r2').addClass("active");
+                                         $('#r1').removeClass("active");
                                         break;
                                     
                                 }
