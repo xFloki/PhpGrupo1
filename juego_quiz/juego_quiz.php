@@ -6,9 +6,9 @@ Autor: Alejandro Dietta Martin 1ºDAM
     <head>
         <meta charset="UTF-8">
         <title>QUIZZ EJEMPLO PHP</title>
-        <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-        <link rel="stylesheet" href="css/bootstrap-theme.min.css" type="text/css">
-        <link rel="stylesheet" href="js/jquery.raty.css" />
+        <link rel="stylesheet" href="juego_quiz/css/bootstrap.min.css" type="text/css">
+        <link rel="stylesheet" href="juego_quiz/css/bootstrap-theme.min.css" type="text/css">
+        <link rel="stylesheet" href="juego_quiz/js/jquery.raty.css" />
     </head>
     <body>
   
@@ -53,7 +53,7 @@ Autor: Alejandro Dietta Martin 1ºDAM
 //            }
         ?>
 
-        <div class="container" id ="container">
+        <div class="container" >
             <div class="row">
                 <div class="col-md-3"></div>
                 <div class="col-md-6">
@@ -92,9 +92,9 @@ Autor: Alejandro Dietta Martin 1ºDAM
 
 
 
-            <script src="js/jquery.raty.js"></script>
-            <script src="js/jquery-1.12.0.min.js"></script>
-            <script src="js/bootstrap.min.js"></script>
+            <script src="juego_quiz/js/jquery.raty.js"></script>
+            <script src="juego_quiz/js/jquery-1.12.0.min.js"></script>
+            <script src="juego_quiz/js/bootstrap.min.js"></script>
             <script>
                             var arrayPreguntas;
                             var listaRespuestas = [3, 4, 5, 6];
@@ -137,7 +137,7 @@ Autor: Alejandro Dietta Martin 1ºDAM
                             function compruebaNivel(n){
                             if(tema){
                                 nivel = n;                             
-                                 $('#container').load('test_quiz.php', {
+                                 $('#centro1').load('juego_quiz/test_quiz.php', {
                                   temaSeleccionado: tema, nivelSeleccionado: nivel                                   
                                });
                            } else {

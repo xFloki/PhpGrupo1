@@ -38,7 +38,7 @@ include('./funciones_quiz.php');
             ?>
         
 
-<div class="container" id ="container">
+<div class="container">
     <div class="row">
                 <div class="col-md-3">
                     <br>              
@@ -86,9 +86,9 @@ include('./funciones_quiz.php');
                 <div class="col-md-3"></div>
             </div>
     </div>
-      <script src="js/jquery-1.12.0.min.js"></script>
-      <script src="js/jquery.raty.js"></script>
-        <script src="js/bootstrap.min.js"></script>
+      <script src="juego_quiz/js/jquery-1.12.0.min.js"></script>
+      <script src="juego_quiz/js/jquery.raty.js"></script>
+        <script src="juego_quiz/js/bootstrap.min.js"></script>
         
         <script>
                   
@@ -104,13 +104,14 @@ include('./funciones_quiz.php');
             arrayPreguntas = <?php echo json_encode($listaPreguntas);?>;
             vidas = 5;
             vidasIniciales = vidas;
-            $('#progreso').raty({ readOnly: true, score: 0, number:10,  starOn: 'images/trophy.png', starOff : 'images/cup.png'});
+            $('#progreso').raty({ readOnly: true, score: 0, number:10,  starOn: 'juego_quiz/images/trophy.png',
+                starOff : 'juego_quiz/images/cup.png'});
             $('#vidas').raty({
             readOnly: true,
             score: vidas,
             number: vidasIniciales,
-            starOn  : 'images/like.png',
-            starOff : 'images/dislike.png'
+            starOn  : 'juego_quiz/images/like.png',
+            starOff : 'juego_quiz/images/dislike.png'
 });
           
             
@@ -131,7 +132,7 @@ include('./funciones_quiz.php');
         arrayPreguntas = <?php echo json_encode($listaPreguntas);?>;
             pregunta = Math.floor(Math.random() * <?php echo sizeof($listaPreguntas);?>); 
     
-            $('#enunciado').prepend('<img src="'+arrayPreguntas[pregunta][8]+'.jpg"/>');
+            $('#enunciado').prepend('<img src="juego_quiz/'+arrayPreguntas[pregunta][8]+'.jpg"/>');
                     
             listaRespuestas = desordena(listaRespuestas);
             $('#r1').html(arrayPreguntas[pregunta][listaRespuestas[0]])
@@ -165,14 +166,15 @@ include('./funciones_quiz.php');
             aciertos = 0;
             numEstrellas = 0;
             reseteaRespuestas();
-            $('#progreso').raty({ readOnly: true, score: 0, number:10, starOn: 'images/trophy.png', starOff : 'images/cup.png' });
+            $('#progreso').raty({ readOnly: true, score: 0, number:10, starOn: 'juego_quiz/images/trophy.png', 
+                starOff : 'juego_quiz/images/cup.png' });
             cambiaPregunta();
            $('#vidas').raty({
             readOnly: true,
             score: vidasIniciales,
             number: vidasIniciales,
-            starOn  : 'images/like.png',
-            starOff : 'images/dislike.png'
+            starOn  : 'juego_quiz/images/like.png',
+            starOff : 'juego_quiz/images/dislike.png'
 });
             
         }
@@ -182,7 +184,7 @@ include('./funciones_quiz.php');
          }
          function ganador(){
              
-                    $('#container').load('win_quiz.php', {
+                    $('#container').load('juego_quiz/win_quiz.php', {
                  
               });
                 
@@ -204,7 +206,8 @@ include('./funciones_quiz.php');
              }
                  
                 numEstrellas++;
-               $('#progreso').raty({ readOnly: true, score: numEstrellas, number:10, starOn: 'images/trophy.png', starOff : 'images/cup.png' });
+               $('#progreso').raty({ readOnly: true, score: numEstrellas, number:10, starOn: 'juego_quiz/images/trophy.png', 
+                   starOff : 'juego_quiz/images/cup.png' });
 
                 //ponemos un delay en estos dos metodos porque sin el daba un error al hacerlo tan rapido que 
                 //pasaba a la siguiente pregunta instantaneamente y se clickeaba la nueva opcion de donde acabaras de acertar
@@ -222,7 +225,7 @@ include('./funciones_quiz.php');
                 boton.unbind();
                 vidas--;
                 if (vidas<=0){
-                    $('#container').load('gameOver_quiz.php', {
+                    $('#container').load('juego_quiz/gameOver_quiz.php', {
                  
               });
                 } else {
@@ -231,8 +234,8 @@ include('./funciones_quiz.php');
                         readOnly: true,
                         score: vidas,
                         number: vidasIniciales,
-                        starOn  : 'images/like.png',
-                        starOff : 'images/dislike.png'
+                        starOn  : 'juego_quiz/images/like.png',
+                        starOff : 'juego_quiz/images/dislike.png'
                     });
                 }
                 
@@ -247,7 +250,7 @@ include('./funciones_quiz.php');
          function cambiaPregunta2(){
             pregunta = Math.floor(Math.random() * <?php echo sizeof($listaPreguntas);?>); 
              $('#enunciado').empty();
-            $('#enunciado').prepend('<img src="'+arrayPreguntas[pregunta][8]+'.jpg"/>');
+            $('#enunciado').prepend('<img src="juego_quiz/'+arrayPreguntas[pregunta][8]+'.jpg"/>');
             
             listaRespuestas = desordena(listaRespuestas);
            $('#r1').unbind();
