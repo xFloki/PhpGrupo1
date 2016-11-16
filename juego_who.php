@@ -1,104 +1,107 @@
-<!doctype html>
-<head>
-  <link rel="stylesheet" type="text/css" href="css/quizymemorygame.css" />
-  
-  <style>
-    body{
-      font-family:Helvetica, Arial, Verdana;
-      text-align: center;
-    }
-    
-    #tutorial-memorygame{
-      margin:auto;
-      width:780px;
-    }
-    
-    .text-style1{
-      font-size:14pt;
-      color:#56605f;
-      font-weight:normal;
-      text-shadow: 1px 1px 1px #fff;
-      margin:0;
-      line-height:24pt;
-    }
-    
-    .reset-button{
-      margin: 0 0 1.5em 0;
-    }
-    
-  </style>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
 
-</head>
-<body>
+           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   
-  <h1>QuizY jQuery memory plugin</h1>
   
-  <div id="main" role="main">
-    
-    <div id="tutorial-memorygame" class="quizy-memorygame">
-      <ul>
-          <li class="match1">
-            <img src="img/flag-Bulgaria.png">
-          </li>
-          <li class="match2">
-            <img src="img/flag-Cuba.png">
-          </li>
-          <li class="match3">
-            <img src="img/flag-Sweden.png">
-          </li>
-          <li class="match4">
-            <img src="img/flag-NewZealand.png">
-          </li>
-          <li class="match5">
-            <img src="img/flag-Uruguay.png">
-          </li>
-          <li class="match6">
-            <img src="img/flag-Tunisia.png">
-          </li>
-          <li class="match1">
-            <br><br><br><p class="text-style1">Bulgaria</p>
-          </li>
-          <li class="match2">
-            <br><br><br><p class="text-style1">Cuba</p>
-          </li>
-          <li class="match3">
-            <br><br><br><p class="text-style1">Sweden</p>
-          </li>
-          <li class="match4">
-            <br><br><br><p class="text-style1">New<br>Zealand</p>
-          </li>
-          <li class="match5">
-            <br><br><br><p class="text-style1">Uruguay</p>
-          </li>
-          <li class="match6">
-            <br><br><br><p class="text-style1">Tunisia</p>
-          </li>
-      </ul>
-    </div>
-    
-    
-    <div class="reset-button">
-      <a id="restart" href="">Reset game</a>
-    </div>
-    
-    <div>Flag icons for this demo - by <a href="http://www.gosquared.com/liquidicity/archives/1493" target="_blank">James Gill</a></div>
+        <script src="js/Chart.js"></script>
 
 
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="../js/jquery-1.7.1.min.js"><\/script>')</script>
-  <script src="../js/jquery-ui-1.8.17.custom.min.js"></script>
-  
-  <script src="../js/jquery.flip.min.js"></script>
-  <script src="../js/jquery.quizymemorygame.js"></script>
-  
-  <script>
-    var quizyParams = {itemWidth: 156, itemHeight: 156, itemsMargin:40, colCount:4, animType:'flip' , flipAnim:'tb', animSpeed:250, resultIcons:true, randomised:true }; 
-    $('#tutorial-memorygame').quizyMemoryGame(quizyParams);
-    $('#restart').click(function(){
-      $('#tutorial-memorygame').quizyMemoryGame('restart');
-      return false;
-    });
-  </script>
 
-</body>
+    </head>
+
+
+    <body>
+
+
+
+        <?php
+        include('misfunciones.php');
+        $mysqli = conectaBBDD();
+        $DNI = 1;
+        $Nombre = 2;
+        $Apellidos = 2;
+
+        $progreso = array();
+
+//hago la consulta a la BBDD
+        $consulta_progresos = $mysqli->query("select * from puntuacion where Alumno=" . $DNI . " limit 10");
+//saco el numero de usuarios que hay en la bbdd
+        $num_progresos = $consulta_progresos->num_rows;
+
+
+
+
+//monto un bucle for para cargar en el array los resultados de la query
+        for ($i = 0; $i < $num_progresos; $i++) {
+            $r = $consulta_progresos->fetch_array();
+            $progreso[$i][1] = $r['Juego'];
+            $progreso[$i][2] = $r['Fecha'];
+            $progreso[$i][3] = $r['Puntuacion'];
+        }
+        $contador = 0;
+    
+       
+        ?>
+        
+          <div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li><a href="#">HTML</a></li>
+      <li><a href="#">CSS</a></li>
+      <li><a href="#">JavaScript</a></li>
+    </ul>
+  </div>
+
+
+        <div id="canvas-holder" style="margin: 10%;">
+            <h2 class="text-center ">Gráfico</h2>
+            <canvas id="chart-area4" width="600" height="200"></canvas>
+        </div>
+        <script>
+            var lineChartData = {
+                labels: [
+<?php
+for ($j = 0; $j < $num_progresos; $j++) {
+    echo'"' . $progreso[$j][1] . ' ' . $progreso[$j][2] . '" ,';
+}
+?>
+                ],
+                datasets: [
+                    {
+                        label: "Primera serie de datos",
+                        fillColor: "rgba(220,220,220,0.2)",
+                        strokeColor: "#6b9dfa",
+                        pointColor: "#1e45d7",
+                        pointStrokeColor: "#fff",
+                        pointHighlightFill: "#fff",
+                        pointHighlightStroke: "rgba(220,220,220,1)",
+                        data: [
+<?php
+for ($k = 0; $k < $num_progresos; $k++) {
+    echo'' . $progreso[$k][3] . ' ,';
+}
+?>
+                        ]
+                    }
+                ]
+
+            }
+
+
+            var ctx4 = document.getElementById("chart-area4").getContext("2d");
+            window.myPie = new Chart(ctx4).Line(lineChartData, {responsive: true});
+        </script>
+        
+<!--          
+    <script src="js/jquery-3.1.0.min.js" /></script>
+   <script src="js/jquery-ui-1.8.17.custom.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>-->
+    
+    </body>
 </html>

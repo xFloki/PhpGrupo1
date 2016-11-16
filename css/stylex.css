@@ -29,7 +29,7 @@ img{max-width:100%;}
 /*end reset*/
 /****-----start-body----****/
 body{
-	background:url(../images/bg.jpg)  no-repeat center fixed;
+	background:url(../imagesLogin/bg.jpg)  no-repeat center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -73,7 +73,7 @@ form li{
 }
 
 .icon{
-	background:url(../images/icons.png)  no-repeat 0px 0px;
+	background:url(../imagesLogin/icons.png)  no-repeat 0px 0px;
 	height:30px;
 	width:30px;
 	display: block;
@@ -82,11 +82,11 @@ form li{
 }
 
 .user{
-	background: url(../images/icons.png) no-repeat 12px 11px;
+	background: url(../imagesLogin/icons.png) no-repeat 12px 11px;
 	
 }
 .lock{
-	background: url(../images/icons.png) no-repeat -17px 11px;
+	background: url(../imagesLogin/icons.png) no-repeat -17px 11px;
 }
 input[type="text"], input[type="password"] {
 	font-family: 'Open Sans', sans-serif;
@@ -198,7 +198,7 @@ input[type="submit"]:hover{
 	-webkit-transition: opacity 0.1s;
 }
 .p-container .checkbox input + i:after {
-	content:url(../images/tick.png) no-repeat 7px 1px;
+	content:url(../imagesLogin/tick.png) no-repeat 7px 1px;
 	top:-15px;
 	left:1px;
 	width: 15px;
@@ -359,10 +359,10 @@ input[type="submit"]:hover{
 	width:69%;
 	}
 	.user {
-		background: url(../images/icons.png) no-repeat 12px 4px;
+		background: url(../imagesLogin/icons.png) no-repeat 12px 4px;
 	}
 	.lock {
-		background: url(../images/icons.png) no-repeat -20px 3px;
+		background: url(../imagesLogin/icons.png) no-repeat -20px 3px;
 	}
 	.p-container .checkbox {
 	float: none;
