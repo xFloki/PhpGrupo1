@@ -49,12 +49,12 @@
         ?>
         
           <div class="dropdown">
-    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Asignatura
     <span class="caret"></span></button>
     <ul class="dropdown-menu">
-      <li><a href="#">HTML</a></li>
-      <li><a href="#">CSS</a></li>
-      <li><a href="#">JavaScript</a></li>
+      <li><a href="#">QUIZ</a></li>
+      <li><a href="#">MEMORY</a></li>
+      <li><a href="#">DRAG</a></li>
     </ul>
   </div>
 
@@ -63,6 +63,9 @@
             <h2 class="text-center ">Gráfico</h2>
             <canvas id="chart-area4" width="600" height="200"></canvas>
         </div>
+        <div class="btn btn-primary btn-block" onclick= "myPie.destroy();"> VIDAS </div>
+        <div class="btn btn-primary btn-block" onclick="cambiaVida(5036787)"> VIDAS </div>
+       
         <script>
             var lineChartData = {
                 labels: [
@@ -96,7 +99,23 @@ for ($k = 0; $k < $num_progresos; $k++) {
 
             var ctx4 = document.getElementById("chart-area4").getContext("2d");
             window.myPie = new Chart(ctx4).Line(lineChartData, {responsive: true});
+            
+                               
+              function cambiaVida(_DNI){
+                
+               
+        $('#chart-area4').load('cambiarGrafica.php', {
+                    
+                    DNI: _DNI,
+                    
+                });
+          
+
+               
+            }
+            
         </script>
+        
         
 <!--          
     <script src="js/jquery-3.1.0.min.js" /></script>

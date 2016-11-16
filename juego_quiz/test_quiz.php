@@ -47,6 +47,7 @@ include('./funciones_quiz.php');
 
 <div class="container">
     <div class="row">
+        <br><br><br>
                 <div class="col-md-3">
                     <br>              
                     <br>
