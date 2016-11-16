@@ -48,6 +48,8 @@ $apellido = $_SESSION['Apellidos']
 
                         <li><a href="#" onclick="$('div#centro1').load('juego_oveja.php')">MEMORY GAME</a></li>
                         <li><a href="#" onclick="$('div#centro1').load('juego_flip.php')">FLIP</a></li>
+                        <li><a href="#" onclick="$('div#centro1').load('juego_quiz/juego_quiz.php')">QUIZ</a></li>
+                        <li><a href="#" onclick="$('div#centro1').load('draggableEjemplo.php')">ARRASTRAME</a></li>
 
                         <li><a >DRAGG & DROP</a></li>
                         <li>&nbsp;</li>
