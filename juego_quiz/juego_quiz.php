@@ -7,8 +7,7 @@ Autor: Alejandro Dietta Martin 1ºDAM
         <meta charset="UTF-8">
         <title>QUIZZ EJEMPLO PHP</title>
         <link rel="stylesheet" href="juego_quiz/css/bootstrap.min.css" type="text/css">
-        <link rel="stylesheet" href="juego_quiz/css/bootstrap-theme.min.css" type="text/css">
-        <link rel="stylesheet" href="juego_quiz/js/jquery.raty.css" />
+       
     </head>
     <body>
   

@@ -79,7 +79,7 @@ shuffle($imagenes);
 
 </head>
 <body>
-    
+    <br><br>
   <h1 style="color:white;">Juego Cada Oveja Con su Pareja</h1>
    <br>  <br>
  
@@ -129,9 +129,9 @@ shuffle($imagenes);
     </div>
     
     
-    <div class="reset-button">
-      <a id="restart" href="">Reset game</a>
+      <div  id="mamaiema">
     </div>
+
     
   
 
@@ -146,12 +146,19 @@ shuffle($imagenes);
   
   
   <script>
-    var quizyParams = {itemWidth: 156, itemHeight: 156, itemsMargin:40, colCount:4, animType:'flip' , flipAnim:'tb', animSpeed:250, resultIcons:true, randomised:true }; 
+    var quizyParams = {  onFinishCall: function(param){; var silvia = param.clicks; 
+        $("#mamaiema").load("guardaPuntuacionOveja.php",{
+            CLICK : silvia                    
+        });},
+        itemWidth: 156, itemHeight: 156, itemsMargin:40, colCount:4,
+        animType:'flip' , flipAnim:'tb', animSpeed:250, resultIcons:true, randomised:true }; 
     $('#tutorial-memorygame').quizyMemoryGame(quizyParams);
     $('#restart').click(function(){
       $('#tutorial-memorygame').quizyMemoryGame('restart');
       return false;
     });
+    
+   
   </script>
 
 </body>
