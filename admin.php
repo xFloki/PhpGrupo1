@@ -18,9 +18,9 @@ and open the template in the editor.
 
     <body>
 
-        <div id="main">
-            <div id="main2">
-                <div id="div1"  style="margin:5% 10% 0 10%">
+        <div id="mainInicioAdmin">
+            <div id="mainJuegoAdmin">
+                <div id="div2"  style="margin:5% 10% 0 10%">
 
                     <?php
                     include ('./misfunciones.php');
@@ -55,9 +55,15 @@ and open the template in the editor.
 
 
                     echo'
-                <button onclick="inicio()" type="button" class="btn btn-primary btn-lg">Inicio</button>
-                <button onclick="juego1()" type="button" class="btn btn-primary btn-lg">Juego</button>
-                <br/><br/><br/>
+                        <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4"><button  style="width:150px; margin-right:20px" type="button" class="btn btn-primary btn-sm active">Inicio</button>
+                <button style="width:150px" onclick="juego()" type="button" class="btn btn-primary btn-sm">Juego</button></div>
+        <div class="col-md-4"><button style="float: right;"onclick="inicio1()" type="button" class="btn btn-info btn-sm"> <img src="img/recarga.png"style="width:15px;"> </button>
+               </div>
+      </div>
+                
+                  <br/><br/><br/>
             <table class="table table-striped text-center" >
             <tr class="warning">
             <th></th>
@@ -172,12 +178,10 @@ and open the template in the editor.
 
 
     <script>
+        function juego() {
+            $("#mainJuegoAdmin").load("juego_flip_admin.php", {
 
-
-                                    function juego1() {
-                                        $("#main").load("juego_flip_admin.php", {
-
-                                        });
+                 });
                                     }
                                     ;
 
@@ -186,8 +190,8 @@ and open the template in the editor.
     <script>
 
 
-        function inicio() {
-            $("#main2").load("admin.php", {
+        function inicio1() {
+            $("#mainInicioAdmin").load("admin.php", {
 
             });
         }
@@ -205,7 +209,7 @@ and open the template in the editor.
             var _Apellidos = lista[_num][3];
 
             console.log(_DNI);
-            $("#div1").load("progresoAlumnos.php", {
+            $("#div2").load("progresoAlumnos.php", {
                 DNI: _DNI,
                 Nombre: _Nombre,
                 Apellidos: _Apellidos

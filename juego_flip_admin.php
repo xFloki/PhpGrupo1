@@ -9,8 +9,9 @@
 
     <body>
 
-        <div id="main">
-            <div id="main2">
+         <div id="mainInicio">
+        <div id="mainJuego">
+           
                 <div id="div1"  style="margin:5% 10% 0 10%">
                     <?php
                     include ('./misfunciones.php');
@@ -46,8 +47,15 @@
 
 
                     echo'
-                <button onclick="inicio" type="button" class="btn btn-primary btn-lg">Inicio</button>
-                <button onclick="juego1()" type="button" class="btn btn-primary btn-lg">Juego</button>
+                        <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+        <button style="width:150px; margin-right:20px" onclick="vuelveInicio()" type="button" class="btn btn-primary btn-sm">Inicio</button>
+                <button style="width:150px" type="button" class="btn btn-primary btn-sm active">Juego</button></div>
+        <div class="col-md-4"><button style="float: right;"onclick="juego1()" type="button" class="btn btn-info btn-sm"> <img src="img/recarga.png"style="width:15px;"> </button>
+                </div>
+      </div>
+                
                 <br/><br/><br/>
             <table class="table table-striped text-center" >
             <tr class="warning">
@@ -180,7 +188,7 @@
 
 
         function juego1() {
-            $("#main").load("juego_flip_admin.php", {
+            $("#mainJuego").load("juego_flip_admin.php", {
 
             });
         }
@@ -191,8 +199,8 @@
     <script>
 
 
-        function inicio() {
-            $("#main2").load("admin.php", {
+        function vuelveInicio() {
+            $("#mainInicio").load("admin.php", {
 
             });
         }
@@ -266,7 +274,7 @@
                     "<h3>Imagen: </h3> <input id='actualiza_NombreI' class='form-control input-sm' id='inputsm' type='text'   readonly='readonly' value='" + lista[_num][0] + "'><br/>\n\
 <h3>Descripcion: </h3> <input id='actualiza_Descripcion' class='form-control input-sm' id='inputsm' type='text'  value='" + lista[_num][1] + "'><br/>\n\
 <h3>Nombre: </h3> <input id='actualiza_Nombre_muestra' class='form-control input-sm' id='inputsm' type='text'  value='" + lista[_num][3] + "'><br/>\n\
-<button  type='button'   data-dismiss='modal' class='btn btn-success' onclick='actualizaDatosImagen()'>Aceptar</button>"
+<button  type='button'   data-dismiss='modal' class='btn btn-success'onclick='actualizaDatosImagen()'>Aceptar</button>"
                     );
         }
         ;
