@@ -199,7 +199,7 @@ and open the template in the editor.
     <h3>Nombre: </h3> <input id='actualiza_Nombre' class='form-control input-sm' id='inputsm' type='text'  value='"+lista[_num][2]+"'><br/>\n\
 <h3>Apellidos: </h3> <input id='actualiza_Apellidos' class='form-control input-sm' id='inputsm' type='text'  value='"+lista[_num][3]+"'><br/>\n\
 <h3>Email: </h3> <input id='actualiza_Email' class='form-control input-sm' id='inputsm' type='text'  value='"+lista[_num][4]+"'><br/>\n\
- <button  type='button' class='btn btn-success' onclick='actualizaDatos()'>Aceptar</button>"
+ <button  type='button'   data-dismiss='modal' class='btn btn-success' onclick='actualizaDatos()'>Aceptar</button>"
             );
         }
         ;
