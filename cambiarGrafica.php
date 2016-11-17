@@ -1,13 +1,18 @@
 <?php
 
+if (!isset($_SESSION)) {
+    session_start();
+}
 include ('misfunciones.php');
 $mysqli = conectaBBDD();
-$DNI = $_POST['DNI'];
+
+$JUEGO = $_POST['JUEGO'];
 
 $progreso = array();
 
 //hago la consulta a la BBDD
-        $consulta_progresos = $mysqli->query("select * from puntuacion where Alumno=" . $DNI . " limit 10");
+        $consulta_progresos = $mysqli->
+                query("select * from puntuacion where Alumno=" .$_SESSION['DNI']. " and Juego = '".$JUEGO."' limit 10");
 //saco el numero de usuarios que hay en la bbdd
         $num_progresos = $consulta_progresos->num_rows;
 
@@ -26,6 +31,9 @@ $progreso = array();
         ?>
 
   <script>
+      //Antes de añadir la nueva grafica borramos la anterior para que no de error puesto que de manera predefinida
+      //cargamos la grafica de juego oveja cuando estamos en progreso
+      myPie.destroy();
             var lineChartData = {
                 labels: [
 <?php

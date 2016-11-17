@@ -2,10 +2,11 @@
     <head>
         <meta charset="UTF-8">
         <title></title>
-
-           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                 <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/usuarioperfil.css">
+<!--           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
   
   
         <script src="js/Chart.js"></script>
@@ -47,14 +48,15 @@
     
        
         ?>
-        
+        <br>
           <div class="dropdown">
-    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Asignatura
+              <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"
+                      style="margin-top:5%; margin-left: 17%">Asignatura
     <span class="caret"></span></button>
-    <ul class="dropdown-menu">
-      <li><a href="#">QUIZ</a></li>
-      <li><a href="#">MEMORY</a></li>
-      <li><a href="#">DRAG</a></li>
+    <ul class="dropdown-menu" style="margin-left: 17%">
+      <li><a href="#" onclick="cargarGrafica('Oveja')">QUIZ</a></li>
+      <li><a href="#" onclick="cargarGrafica('Quiz')">MEMORY</a></li>
+<!--      <li><a href="#" onclick="cargarGrafica('Oveja')">DRAG</a></li>-->
     </ul>
   </div>
 
@@ -63,8 +65,8 @@
             <h2 class="text-center ">Gráfico</h2>
             <canvas id="chart-area4" width="600" height="200"></canvas>
         </div>
-        <div class="btn btn-primary btn-block" onclick= "myPie.destroy();"> VIDAS </div>
-        <div class="btn btn-primary btn-block" onclick="cambiaVida(5036787)"> VIDAS </div>
+        <div class="btn btn-primary btn-block" onclick= "$('div#centro1').load('usuario_progreso.php');"> VOLVER A PERFIL </div>
+<!--        <div class="btn btn-primary btn-block" onclick="cargarGrafica('Oveja')"> VIDAS </div>-->
        
         <script>
             var lineChartData = {
@@ -101,13 +103,12 @@ for ($k = 0; $k < $num_progresos; $k++) {
             window.myPie = new Chart(ctx4).Line(lineChartData, {responsive: true});
             
                                
-              function cambiaVida(_DNI){
+              function cargarGrafica(_JUEGO){
                 
                
         $('#chart-area4').load('cambiarGrafica.php', {
-                    
-                    DNI: _DNI,
-                    
+                   
+                    JUEGO: _JUEGO
                 });
           
 

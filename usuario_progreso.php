@@ -32,7 +32,7 @@ include ('./misfunciones.php');
     </head>
     <body>
 
-
+        <br> <br>
         <div class="container">
             <div class="row">
                 <div class="col-md-5  toppad  pull-right col-md-offset-3 ">
@@ -40,8 +40,8 @@ include ('./misfunciones.php');
                     <p class=" text-info"<span id="servertime"></span></p>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
-
-
+                    <div style="text-align: center;"><h3>MI PROGRESO</h3></div> <br><br>
+                    
                     <div class="panel panel-info">
                         <div class="panel-heading">
                             <h3 class="panel-title">
@@ -96,7 +96,7 @@ include ('./misfunciones.php');
                                     </table>
 
                                     
-                                    <a href="#" class="btn btn-primary">Mi progreso</a>
+                                    <a href="#" class="btn btn-primary" onclick="$('div#centro1').load('juego_who.php')">Mi progreso</a>
                                 </div>
                             </div>
                         </div>
@@ -116,51 +116,11 @@ include ('./misfunciones.php');
             
             
         </div>
-        
-      <script src="https://code.highcharts.com/stock/highstock.js"></script>
-<script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+     
 
         <script type="text/javascript">
             
     
-   $(function () { 
-    var myChart = Highcharts.chart('grafica', {
-        chart: {
-            type: 'bar'
-        },
-        title: {
-            text: 'Fruit Consumption'
-        },
-        xAxis: {
-            categories: ['Apples', 'Bananas', 'Oranges']
-        },
-        yAxis: {
-            title: {
-                text: 'Fruit eaten'
-            }
-        },
-        series: [{
-            name: 'Jane',
-            data: [1, 0, 4]
-        }, {
-            name: 'John',
-            data: [5, 7, 3]
-        }]
-    });
-});
-
-var chart1; // globally available
-$(function() {
-       chart1 = Highcharts.stockChart('grafica', {
-         rangeSelector: {
-            selected: 1
-         },
-         series: [{
-            name: 'USD to EUR',
-            data: usdtoeur // predefined JavaScript array
-         }]
-      });
-   });
 
 
             //SCRIPT SACADO DE INTERNET PARA IMPRIMIR DE FORMA DINAMICA LA FECHA Y HORA EN HTML        
