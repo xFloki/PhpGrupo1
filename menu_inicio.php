@@ -20,7 +20,7 @@ $apellido = $_SESSION['Apellidos']
         <link rel="stylesheet" href="js/jquery-3.1.0.min.js">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/prueba.css">
-        
+     
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
         <link href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css" rel="stylesheet" />
@@ -41,7 +41,7 @@ $apellido = $_SESSION['Apellidos']
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand text-danger" href="#" onclick="$('div#centro1').load('menu_inicio.php')">Histologia</a>
+                    <a class="navbar-brand text-danger" href="#" onclick="$('div#centro').load('menu_inicio.php')">Histologia</a>
                 </div>
                 <div class="navbar-collapse collapse" id="navbar-collapsible">
                     <ul class="nav navbar-nav navbar-left">
@@ -196,6 +196,7 @@ $apellido = $_SESSION['Apellidos']
 
     </div>
 </body>
+  <script src="js/bootstrap.js" ></script>
 <script>
 
 

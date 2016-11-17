@@ -1,9 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
     <head>
-        <meta charset="utf-8"></meta>
+<!--        <meta charset="utf-8"></meta>
         <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
-        <title>Flip</title>
+        <title>Flip</title>-->
         <link rel="stylesheet" href="css/styleFlip.css"/> 
 <!--        <link rel="stylesheet" href="css/bootstrap.min.css"  />-->
 
@@ -202,7 +202,7 @@
 
     <script src="js/jquery-3.1.0.min.js"></script>
     <script src="js/jquery.flip.minSilvia.js" ></script>
-    <script src="js/bootstrap.js" ></script>
+<!--    <script src="js/bootstrap.js" ></script>-->
 
     <script>
          $("[id^=card-]").flip({
