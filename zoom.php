@@ -4,8 +4,9 @@
         <meta charset="utf-8"></meta>
         <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
         <title>Flip</title>
-        <link rel="stylesheet" href="css/styleFlip.css"/> 
-<!--        <link rel="stylesheet" href="css/bootstrap.min.css"  />-->
+      
+        <link rel="stylesheet" href="css/bootstrap.min.css"  />
+             <link rel="stylesheet" href="css/styleAdmin.css"  />
 
 
     </head>
@@ -35,78 +36,58 @@
         for ($i = 0; $i < $num_usuarios; $i++) {
             $r = $consulta_usuarios->fetch_array();
             $imagenes[$i][0] = $r['Nombre'];
-            $imagenes[$i][1] = $r['Descripcion'];
+            
             $imagenes[$i][3] = $r['Nombre_muestra'];
         }
         $contador = 0;
 
 //ahora voy a usar los datos en un ejemplo     
         ?>
-        <div id="main"  style="margin:0px 10% 0 10%" >
+        <div id="main"  >
             <div class="row  ">
-                <?php
-// Looping through the array:
-                ?>
-
-
-
-
-                    <!-- Carousel items -->
-                    
-
+               
                         <?php
-// Looping through the array:
-//                        shuffle($imagenes);
-
-
+//
                        
 
 
                             for ($i = 0; $i < $num_usuarios; $i++) {
                                 echo'
-             <div class="col-lg-3 col-md-6 col-xs-12 col-sm-6 text" style="height:290px;   "  >
-              
-                        <img class="img2" src="' . $imagenes[$contador][0] . '" ></img>
-                    
+                                    
 
-                   
-                
-            </div>
-            
+ <div class="col-lg-2 col-md-3 col-xs-4 col-sm-6 ">
+    <div style="height:250px"class="thumbnail usuario" onclick="myFunction(\'' . $contador . '\')"  data-toggle="modal" data-target="#myModal">
+      <img style="height:160px;" src="' . $imagenes[$contador][0] . '"></img>
+      <div class="caption text-center">
+        <h3 style="positio:absolute;bottom:10px">' . $imagenes[$contador][3] . '</h3>
+        
+      </div>
+    </div>
+  </div>
+
+             
 
             ';
                                 $contador = $contador + 1;
                             }
 
-                            echo'
-                                
-        </div>
-        
-
-
-
-                        ';
-
-
-                         
-                                
-                            
+                          
 
         
                         ?>
                         
                        
-                    <div class="modal fade" id="myModalZoom" role="dialog">
+                       <div class="modal fade" id="myModal" role="dialog">
                         <div class="modal-dialog modal-lg" >
                             <div class="modal-content">
-                                <div class="modal-header" style="background-color:rgba(0,0,0, 0.4);">
+                                <div class="modal-header" >
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                                     <h4 id="titulo_modal" class="modal-title"></h4>
                                 </div>
                                 <div class="modal-body">
                                     <p id="descripcion_modal"></p>
                                 </div>
-                                <div class="modal-footer"  style="background-color:rgba(0,0,0, 0.4);">
+                                <div class="modal-footer"  >
                                     <button  type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                                 </div>
                             </div>
@@ -114,6 +95,7 @@
                     </div>    
 
                 </div>
+            
             </div>
        
     
@@ -128,16 +110,34 @@
     <script>
 
 
-        function myModalZoom(_num) {
+        function myFunction(_num) {
         var lista=<?php echo json_encode($imagenes);?>  
         $('#titulo_modal').html(
-                lista[_num][0]
+                lista[_num][3]
             );
     $('#descripcion_modal').html(
-                lista[_num][3]
+            "<button onclick='zoom("+_num+") style='margin-left:10%;' type='button' class='btn btn-success' >X2</button>\n\
+<button  type='button' class='btn btn-success' >X4</button>\n\
+<button  type='button' class='btn btn-success' >X6</button><br/><br/><br/>\n\
+<img class='zoom-"+_num+"'  ondblclick='javascript:;this.width=160;this.height=160' \n\
+ style='margin-left:10%;' src='"+  lista[_num][0] + "'></img>"
+               
             );
         }
         ;
 
+    </script>
+    <script>
+        function zoom(numero) {
+
+            $(document).on('click', ('.zoom-'+numero), function (event) {
+                event.preventDefault();
+                this.width=320px;
+                this.height=320px;
+
+            });
+
+
+        }
     </script>
 </html>
