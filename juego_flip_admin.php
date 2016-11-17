@@ -48,12 +48,16 @@
 
                     echo'
                         <div class="row">
-        <div class="col-md-4"></div>
+        <div class="col-md-4">
+         <button onclick="juego1()" type="button" class="btn btn-info btn-sm"> <img src="img/recarga.png"style="width:15px;"> </button>
+          
+        </div>
         <div class="col-md-4">
         <button style="width:150px; margin-right:20px" onclick="vuelveInicio()" type="button" class="btn btn-primary btn-sm">Inicio</button>
                 <button style="width:150px" type="button" class="btn btn-primary btn-sm active">Juego</button></div>
-        <div class="col-md-4"><button style="float: right;"onclick="juego1()" type="button" class="btn btn-info btn-sm"> <img src="img/recarga.png"style="width:15px;"> </button>
-                </div>
+        <div class="col-md-4">
+        <button  style="float: right;" href="./" type="button" class="btn btn-danger btn-sm"> <img src="img/apagar.png"style="width:15px;"> </button>
+              </div>
       </div>
                 
                 <br/><br/><br/>

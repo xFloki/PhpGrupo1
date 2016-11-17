@@ -56,10 +56,14 @@ and open the template in the editor.
 
                     echo'
                         <div class="row">
-        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <button onclick="inicio1()" type="button" class="btn btn-info btn-sm"> <img src="img/recarga.png"style="width:15px;"> </button>
+        </div>
         <div class="col-md-4"><button  style="width:150px; margin-right:20px" type="button" class="btn btn-primary btn-sm active">Inicio</button>
                 <button style="width:150px" onclick="juego()" type="button" class="btn btn-primary btn-sm">Juego</button></div>
-        <div class="col-md-4"><button style="float: right;"onclick="inicio1()" type="button" class="btn btn-info btn-sm"> <img src="img/recarga.png"style="width:15px;"> </button>
+        <div class="col-md-4">
+        <button style="float: right;" href="./" type="button" class="btn btn-info btn-danger"> 
+        <img src="img/apagar.png"style="width:15px;"> </button>
                </div>
       </div>
                 
