@@ -108,7 +108,8 @@ and open the template in the editor.
                
            
         
-              <div id="carga"></div>    
+              <div id="carga"></div>   
+              <div id="actualiza"></div>
             </div>
             <div class="modal fade" id="myModal" role="dialog">
                         <div class="modal-dialog modal-lg" >
@@ -194,36 +195,41 @@ and open the template in the editor.
                 lista[_num][0]+"     "+ lista[_num][2]+" "+ lista[_num][3]
             );
     $('#descripcion_modal').html(
-                "<h3>DNI: </h3> <input class='form-control input-sm' id='inputsm' type='text'  value='"+lista[_num][0]+"'><br/>\n\
-    <h3>Nombre: </h3> <input class='form-control input-sm' id='inputsm' type='text'  value='"+lista[_num][2]+"'><br/>\n\
-<h3>Apellidos: </h3> <input class='form-control input-sm' id='inputsm' type='text'  value='"+lista[_num][3]+"'><br/>\n\
-<h3>Email: </h3> <input class='form-control input-sm' id='inputsm' type='text'  value='"+lista[_num][4]+"'><br/>\n\
+                "<h3>DNI: </h3> <input id='actualiza_DNI' class='form-control input-sm' id='inputsm' type='text'   readonly='readonly' value='"+lista[_num][0]+"'><br/>\n\
+    <h3>Nombre: </h3> <input id='actualiza_Nombre' class='form-control input-sm' id='inputsm' type='text'  value='"+lista[_num][2]+"'><br/>\n\
+<h3>Apellidos: </h3> <input id='actualiza_Apellidos' class='form-control input-sm' id='inputsm' type='text'  value='"+lista[_num][3]+"'><br/>\n\
+<h3>Email: </h3> <input id='actualiza_Email' class='form-control input-sm' id='inputsm' type='text'  value='"+lista[_num][4]+"'><br/>\n\
  <button  type='button' class='btn btn-success' onclick='actualizaDatos()'>Aceptar</button>"
             );
         }
         ;
 
     </script>
-    <script>
-            
-            $('#botonInicio').click(function(){
-                var _nombreUsuario = $('#nombreUsuario').val();
-                var _pass = $('#pass').val();
-                
-                $('#centro').load('login.php',{
-                    nombreUsuario: _nombreUsuario,
-                    pass : _pass
-                });
+  <script>
+          function actualizaDatos(){
+              var _actualiza_DNI = $('#actualiza_DNI').val();
+              var _actualiza_Nombre = $('#actualiza_Nombre').val();  
+              var _actualiza_Apellidos = $('#actualiza_Apellidos').val(); 
+              var _actualiza_Email = $('#actualiza_Email').val(); 
+//               if( document.getElementById('recordar').checked == true){
+//                    var _recordar = 'on';
+//                } else {
+//                    var _recordar = 'off';
+//                }
+             
+             
+            $('#actualiza').load("actualizaUsuario.php",{
+               
+//                
+                actualiza_DNI : _actualiza_DNI,
+                actualiza_Nombre : _actualiza_Nombre,
+                actualiza_Apellidos : _actualiza_Apellidos,
+                actualiza_Email : _actualiza_Email,
+               
             });
-            
-            
-            function borra(numero, _idEquipo){
-                $('#boton_'+numero).hide("slow");
-                $('#carga').load('borraFila.php', {
-                    idEquipo: _idEquipo
-                });
-            }
-        </script>
+              
+          }
+      </script>
 
     
  
