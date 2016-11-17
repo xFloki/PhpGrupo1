@@ -49,11 +49,10 @@
                 ?>
 
 
-                <div id="myCarousel" class="carousel slide"  data-interval="false" >
 
 
                     <!-- Carousel items -->
-                    <div class="carousel-inner ">
+                    
 
                         <?php
 // Looping through the array:
@@ -97,7 +96,7 @@
                         ?>
                         
                        
-                    <div class="modal fade" id="myModal" role="dialog">
+                    <div class="modal fade" id="myModalZoom" role="dialog">
                         <div class="modal-dialog modal-lg" >
                             <div class="modal-content">
                                 <div class="modal-header" style="background-color:rgba(0,0,0, 0.4);">
@@ -116,17 +115,8 @@
 
                 </div>
             </div>
-        </div>
-    <div id="inferior-izquierda" href="#myCarousel" data-slide="prev">
-                       
-                        <a id="flecha" style="margin-left:20px;"  ><b>&lsaquo;</b></a>
-                        
-                 
-                    </div>
-                    <div class id="inferior-derecha" href="#myCarousel" data-slide="next">
-                        <a id="flecha" style="margin-right:20px; " ><b>&rsaquo;</b></a>
-                    </div>
-        </div>
+       
+    
     </body>
 
     <script src="js/jquery-3.1.0.min.js"></script>
