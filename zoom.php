@@ -55,9 +55,11 @@
                                 echo'
                                     
 
- <div class="col-lg-2 col-md-3 col-xs-4 col-sm-6 ">
-    <div style="height:250px"class="thumbnail usuario" onclick="myFunction(\'' . $contador . '\')"  data-toggle="modal" data-target="#myModal">
-      <img style="height:160px;" src="' . $imagenes[$contador][0] . '"></img>
+ <div class="col-lg-2 col-md-3 col-xs-6 col-sm-4 col-centered">
+    <div style="height:250px; max-width: 170px;margin-left:30px "class="thumbnail usuario" onclick="myFunction(\'' . $contador . '\')"  data-toggle="modal" data-target="#myModal">
+<div id="">      
+<img class="zoom" style="height:160px;" src="' . $imagenes[$contador][0] . '"></img>
+    </div>
       <div class="caption text-center">
         <h3 style="positio:absolute;bottom:10px">' . $imagenes[$contador][3] . '</h3>
         
@@ -78,7 +80,7 @@
                         
                        
                        <div class="modal fade" id="myModal" role="dialog">
-                        <div class="modal-dialog modal-lg" >
+                        <div class="modal-dialog modal-xs" >
                             <div class="modal-content">
                                 <div class="modal-header" >
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -104,7 +106,7 @@
     <script src="js/jquery-3.1.0.min.js"></script>
     
     <script src="js/bootstrap.js" ></script>
-
+<script src="js/wheelzoom.js"></script>
     
    
     <script>
@@ -116,11 +118,8 @@
                 lista[_num][3]
             );
     $('#descripcion_modal').html(
-            "<button onclick='zoom("+_num+") style='margin-left:10%;' type='button' class='btn btn-success' >X2</button>\n\
-<button  type='button' class='btn btn-success' >X4</button>\n\
-<button  type='button' class='btn btn-success' >X6</button><br/><br/><br/>\n\
-<img class='zoom-"+_num+"'  ondblclick='javascript:;this.width=160;this.height=160' \n\
- style='margin-left:10%;' src='"+  lista[_num][0] + "'></img>"
+            
+"<img style='width:100%; heigth=100%'onclick='myFunctionZoom(\"" + _num + "\")' class='zoom-" + _num + "' style='margin-left:10%;' src='"+  lista[_num][0] + "'></img>"
                
             );
         }
@@ -128,16 +127,8 @@
 
     </script>
     <script>
-        function zoom(numero) {
-
-            $(document).on('click', ('.zoom-'+numero), function (event) {
-                event.preventDefault();
-                this.width=320px;
-                this.height=320px;
-
-            });
-
-
-        }
-    </script>
+          function myFunctionZoom(numero) {
+		wheelzoom(document.querySelector("img.zoom-"+numero+""));
+            };
+	</script>
 </html>
