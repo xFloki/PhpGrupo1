@@ -122,5 +122,6 @@ for ($k = 0; $k < $num_progresos; $k++) {
                 var ctx4 = document.getElementById("chart-area4").getContext("2d");
                 window.myPie = new Chart(ctx4).Line(lineChartData, {responsive: true });
             </script>
+            
     </body>
 </html>
