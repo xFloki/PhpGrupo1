@@ -1,8 +1,9 @@
 <?php
-
+session_start();
 include ('misfunciones.php');
 $mysqli = conectaBBDD();
 $CLICK = $_POST['CLICK'];
+$USUARIO = $_SESSION['DNI'];
 
 
 //En funcion de en el numero de clicks que se haya pasado el juego de Oveja se 
@@ -26,4 +27,10 @@ if ($CLICK <= 24){
 
 $dt = new DateTime('Europe/Madrid');
 $result = $dt->format('Y-m-d H:i:s');
-$mysqli->query("INSERT INTO `puntuacion`  ('100', 'SEXX', '" .$result. "', ". $NOTA . ");");
+$mysqli->query("INSERT INTO `puntuacion` (`Alumno`, `Juego`, `Fecha`, `Puntuacion`) VALUES ('". $USUARIO ."', 'Quiz', '" .$result. "', ". $NOTA . ");");
+
+?>
+<script>
+ $("#centro1").load("finExamenOveja.php",{                            
+        });
+</script>

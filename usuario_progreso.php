@@ -40,7 +40,7 @@ include ('./misfunciones.php');
                     <p class=" text-info"<span id="servertime"></span></p>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
-                    <div style="text-align: center;"><h3>MI PROGRESO</h3></div> <br><br>
+                    <div style="text-align: center;"><h3>MI PERFIL</h3></div> <br><br>
                     
                     <div class="panel panel-info">
                         <div class="panel-heading">
@@ -50,7 +50,7 @@ include ('./misfunciones.php');
                         </div>
                         <div class="panel-body">
                             <div class="row">
-                                <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="img/<?php echo $_SESSION['DNI']; ?>.jpg" class="img-circle img-responsive"> </div>
+                                <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="img/<?php echo $_SESSION['DNI']; ?>.jpg" onerror="this.src='img/camara.png';" class="img-circle img-responsive"> </div>
 
                                 <!--<div class="col-xs-10 col-sm-10 hidden-md hidden-lg"> <br>
                                   <dl>

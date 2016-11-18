@@ -52,7 +52,10 @@ shuffle($imagenes);
   <link rel="stylesheet" href="css/quizymemorygame.css">
   
   <style>
-   
+   body{  
+    background:url(img/background.png)  no-repeat center fixed;
+    background-size: cover;
+   }
     #tutorial-memorygame{
       margin:auto;
       width:780px;
@@ -77,7 +80,7 @@ shuffle($imagenes);
 <body>
    
     <br><br>
-  <h1 style="color:white; font-family:Helvetica, Arial, Verdana;
+  <h1 style="font-family:Helvetica, Arial, Verdana;
       text-align: center;">Juego Cada Oveja Con su Pareja</h1>
    <br>  <br>
  
@@ -140,6 +143,7 @@ shuffle($imagenes);
   <script src="js/jquery-ui-1.8.17.custom.min.js"></script>
   <script src="js/jquery.flip.min.js"></script>
   <script src="js/jquery.quizymemorygame.js"></script>
+ 
 
   
   

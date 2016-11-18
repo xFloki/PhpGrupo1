@@ -26,17 +26,11 @@
         $DNI = 1;
         $Nombre = 2;
         $Apellidos = 2;
-
         $progreso = array();
-
 //hago la consulta a la BBDD
         $consulta_progresos = $mysqli->query("select * from puntuacion where Alumno=" . $DNI . " limit 10");
 //saco el numero de usuarios que hay en la bbdd
         $num_progresos = $consulta_progresos->num_rows;
-
-
-
-
 //monto un bucle for para cargar en el array los resultados de la query
         for ($i = 0; $i < $num_progresos; $i++) {
             $r = $consulta_progresos->fetch_array();
@@ -95,10 +89,7 @@ for ($k = 0; $k < $num_progresos; $k++) {
                         ]
                     }
                 ]
-
             }
-
-
             var ctx4 = document.getElementById("chart-area4").getContext("2d");
             window.myPie = new Chart(ctx4).Line(lineChartData, {responsive: true});
             
@@ -111,7 +102,6 @@ for ($k = 0; $k < $num_progresos; $k++) {
                     JUEGO: _JUEGO
                 });
           
-
                
             }
             

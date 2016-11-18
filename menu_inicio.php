@@ -28,6 +28,7 @@ $apellido = $_SESSION['Apellidos']
       
         <script src="js/scripts.js"></script>
         <link rel="stylesheet" href="css/styles2.css" />
+        
         <style>
   body{
                 background:url(img/background_1.png) ;
@@ -52,7 +53,7 @@ $apellido = $_SESSION['Apellidos']
                         <li><a href="#" onclick="$('div#centro1').load('juego_oveja.php')">MEMORY GAME</a></li>
                         <li><a href="#" onclick="$('div#centro1').load('juego_flip.php')">FLIP</a></li>
                         <li><a href="#" onclick="$('div#centro1').load('juego_quiz/juego_quiz.php')">QUIZ</a></li>
-                        <li><a href="#" onclick="$('div#centro1').load('draggableEjemplo.php')">ARRASTRAME</a></li>
+                        <li><a href="#" onclick="$('div#centro1').load('zoom.php')">ZOOM</a></li>
 
                         <li><a >DRAGG & DROP</a></li>
                         <li>&nbsp;</li>
@@ -81,7 +82,7 @@ $apellido = $_SESSION['Apellidos']
                 </div>
             </div>
         </nav>
-
+        <br><br>
       
     <div class="container" id="centro1" >
         <br>
@@ -179,11 +180,11 @@ $apellido = $_SESSION['Apellidos']
 
                         <div class='wrapper' id="menu">
                             <!-- image -->
-                            <img id="imagen_menu" class="agran" src="img/ovejaPareja.jpg" />
+                            <img id="imagen_menu" class="agran" src="img/reparacion.png" />
                             <!-- description div -->
                             <div class='description' >
                                 <!-- description content -->
-                                <p class='description_content text-center'>¿WHO IS WHO?</p>
+                                <p class='description_content text-center'>UNDER MAINTENEANCE</p>
                                 <!-- end description content -->
                             </div>
                             <!-- end description div -->
@@ -196,8 +197,9 @@ $apellido = $_SESSION['Apellidos']
         </div>  
 
     </div>
-                <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> 
-                   <script src="js/bootstrap.js" ></script>
+                        
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> 
+<!--                   <script src="js/bootstrap.js" ></script>-->
 </body>
 
 <script>

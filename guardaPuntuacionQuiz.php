@@ -19,3 +19,9 @@ $dt = new DateTime('Europe/Madrid');
 $result = $dt->format('Y-m-d H:i:s');
 $mysqli->query("INSERT INTO `puntuacion` (`Alumno`, `Juego`, `Fecha`, `Puntuacion`) VALUES ('". $USUARIO ."', 'Quiz', '" .$result. "', ". $NOTA . ");");
 
+?>
+
+<script>
+ $("#centro1").load("finExamenQuiz.php",{                            
+        });
+</script>
