@@ -55,7 +55,7 @@ $apellido = $_SESSION['Apellidos']
                         <li><a href="#" onclick="$('div#centro1').load('juego_quiz/juego_quiz.php')">QUIZ</a></li>
                         <li><a href="#" onclick="$('div#centro1').load('zoom.php')">ZOOM</a></li>
 
-                        <li><a >DRAGG & DROP</a></li>
+                      
                         <li>&nbsp;</li>
                     </ul>
 
@@ -161,7 +161,7 @@ $apellido = $_SESSION['Apellidos']
 
                     </li>
                     <li>
-                        <a href="juego_adivina.php">
+                        <a href="draggableEjemplo.php">
                             <div class='wrapper' id="menu" >
                                 <!-- image -->
                                 <img id="imagen_menu" class="agran" src="img/iconoDrag.png" />

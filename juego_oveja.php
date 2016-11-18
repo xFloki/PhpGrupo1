@@ -143,7 +143,7 @@ shuffle($imagenes);
   <script src="js/jquery-ui-1.8.17.custom.min.js"></script>
   <script src="js/jquery.flip.min.js"></script>
   <script src="js/jquery.quizymemorygame.js"></script>
- 
+  
 
   
   

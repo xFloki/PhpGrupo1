@@ -37,16 +37,16 @@ if ($numero_dnis > 0) {
              //inicializo la sesion
             session_start();
 
-            if(isset($_POST['recordar']) && 
-                $_POST['recordar'] == 'on') 
-
-                {
+//            if(isset($_POST['recordar']) && 
+//                $_POST['recordar'] == 'on') 
+//
+//                {
                  setcookie('DNI', $DNI, time()+60*60*7);
                  setcookie('password', $password, time()+60*60*7);
 
 
 
-             }; 
+//             }; 
            //guardo los datos del usuario que ha hecho login correcto 
             $_SESSION['DNI'] = $DNI;
             $_SESSION['Nombre'] = $Nombre;
@@ -72,7 +72,7 @@ if ($numero_dnis > 0) {
             header('location: admin.php');
         }
 } else {
-    require 'mesnaje_error.php';
+    require 'mensaje_error.php';
 }
 ?>
         

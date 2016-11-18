@@ -39,7 +39,7 @@ and open the template in the editor.
                     $usuario = array();
 
 //hago la consulta a la BBDD
-                    $consulta_juegos = $mysqli->query("select * from usuario");
+                    $consulta_juegos = $mysqli->query("select * from usuario where tipo=0");
 
 
 //saco el numero de usuarios que hay en la bbdd
