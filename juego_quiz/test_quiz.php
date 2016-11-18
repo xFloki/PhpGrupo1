@@ -93,7 +93,9 @@ include('./funciones_quiz.php');
                 </div>
                 <div class="col-md-3"></div>
             </div>
+     <div id="puntuacion"></div>
     </div>
+
       <script src="juego_quiz/js/jquery-1.12.0.min.js"></script>
       <script src="juego_quiz/js/jquery.raty.js"></script>
         <script src="juego_quiz/js/bootstrap.min.js"></script>
@@ -192,9 +194,10 @@ include('./funciones_quiz.php');
          }
          function ganador(){
              
-                    $('#container').load('juego_quiz/win_quiz.php', {
-                 
-              });
+                    $("#puntuacion").load("guardaPuntuacionQuiz.php",{
+            VIDAS : vidas,
+            ACIERTOS : aciertos  
+        });
                 
          }
         function comprobarRespuesta( n1, boton){
@@ -233,9 +236,10 @@ include('./funciones_quiz.php');
                 boton.unbind();
                 vidas--;
                 if (vidas<=0){
-                    $('#container').load('juego_quiz/gameOver_quiz.php', {
-                 
-              });
+                    $("#puntuacion").load("guardaPuntuacionQuiz.php",{
+            VIDAS : vidas,
+            ACIERTOS : aciertos                    
+        });
                 } else {
                  //Nos actualiza el raty de las vidas en funcion de cuantas nos queden   
                     $('#vidas').raty({
@@ -284,6 +288,6 @@ include('./funciones_quiz.php');
 }    
                       </script>
 
-    </div>
-
+   
+   
 

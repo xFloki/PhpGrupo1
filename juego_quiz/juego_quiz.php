@@ -2,15 +2,7 @@
 <!--
 Autor: Alejandro Dietta Martin 1ºDAM
 -->
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>QUIZZ EJEMPLO PHP</title>
-        <link rel="stylesheet" href="juego_quiz/css/bootstrap.min.css" type="text/css">
-       
-    </head>
-    <body>
-  
+
         <?php
         include('./funciones_quiz.php');
         $mysqli = conectaBBDD();
@@ -51,8 +43,9 @@ Autor: Alejandro Dietta Martin 1ºDAM
 //                echo "$numero ";
 //            }
         ?>
-        
+    
         <style type="text/css">
+            
     body{  
     background:url(img/background.png)  no-repeat center fixed;
     background-size: cover;
@@ -66,9 +59,9 @@ Autor: Alejandro Dietta Martin 1ºDAM
                     <br><br><br><br><br>
                     <h3 align="center" id="enunciado"  ></h3>
                     <br><br>
-                    <button id="r1" class=" btn btn-block  btn-primary-outline" ></button> 
+                    <button id="r1" class="btn btn-block btn-info" ></button> 
 
-                    <button id="r2" class="btn btn-block  btn-primary-outline" ></button> 
+                    <button id="r2" class="btn btn-block  btn-info" ></button> 
 
                    
                     <br><br>
@@ -100,7 +93,7 @@ Autor: Alejandro Dietta Martin 1ºDAM
 
             <script src="juego_quiz/js/jquery.raty.js"></script>
             <script src="juego_quiz/js/jquery-1.12.0.min.js"></script>
-            <script src="juego_quiz/js/bootstrap.min.js"></script>
+<!--            <script src="juego_quiz/js/bootstrap.min.js"></script>-->
             <script>
                             var arrayPreguntas;
                             var listaRespuestas = [3, 4, 5, 6];
@@ -130,13 +123,17 @@ Autor: Alejandro Dietta Martin 1ºDAM
                                         // le he tenido que cambiar la propiedad de activo al los botones primary de tena
                                         //ya que en safari no lo hacia de manera automatica
 //                                        document.getElementById("r1").className += "btn btn-block  btn-primary-outline active";
-                                        $('#r1').addClass("active");
-                                         $('#r2').removeClass("active");
+                                        $('#r1').removeClass("btn-info");
+                                        $('#r1').addClass("btn-primary");
+                                         $('#r2').removeClass("btn-primary");
+                                         $('#r2').addClass("btn-info");
                                         break;
                                     case 1:                                      
                                         tema = <?php echo json_encode($listaTemas[1]); ?>;
-                                         $('#r2').addClass("active");
-                                         $('#r1').removeClass("active");
+                                       $('#r2').removeClass("btn-info");
+                                        $('#r2').addClass("btn-primary");
+                                         $('#r1').removeClass("btn-primary");
+                                         $('#r1').addClass("btn-info");
                                         break;
                                     
                                 }
@@ -189,5 +186,5 @@ Autor: Alejandro Dietta Martin 1ºDAM
                             });
 
             </script>
-    </body>
+    
 </html>

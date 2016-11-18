@@ -29,6 +29,7 @@ $apellido = $_SESSION['Apellidos']
         <script src="js/scripts.js"></script>
         <link rel="stylesheet" href="css/styles2.css" />
 
+
     </head>
     <body>
 

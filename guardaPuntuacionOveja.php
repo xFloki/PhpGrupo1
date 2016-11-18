@@ -26,4 +26,4 @@ if ($CLICK <= 24){
 
 $dt = new DateTime('Europe/Madrid');
 $result = $dt->format('Y-m-d H:i:s');
-$mysqli->query("INSERT INTO `puntuacion` (`Alumno`, `Juego`, `Fecha`, `Puntuacion`) VALUES ('1', 'Oveja', '" .$result. "', ". $NOTA . ");");
+$mysqli->query("INSERT INTO `puntuacion`  ('100', 'SEXX', '" .$result. "', ". $NOTA . ");");

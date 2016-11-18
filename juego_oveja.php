@@ -52,11 +52,7 @@ shuffle($imagenes);
   <link rel="stylesheet" href="css/quizymemorygame.css">
   
   <style>
-    body{
-      font-family:Helvetica, Arial, Verdana;
-      text-align: center;
-    }
-    
+   
     #tutorial-memorygame{
       margin:auto;
       width:780px;
@@ -79,8 +75,10 @@ shuffle($imagenes);
 
 </head>
 <body>
+   
     <br><br>
-  <h1 style="color:white;">Juego Cada Oveja Con su Pareja</h1>
+  <h1 style="color:white; font-family:Helvetica, Arial, Verdana;
+      text-align: center;">Juego Cada Oveja Con su Pareja</h1>
    <br>  <br>
  
   <div id="main" role="main">
@@ -132,7 +130,7 @@ shuffle($imagenes);
       <div  id="mamaiema">
     </div>
 
-    
+  
   
 
 
@@ -151,7 +149,7 @@ shuffle($imagenes);
             CLICK : silvia                    
         });},
         itemWidth: 156, itemHeight: 156, itemsMargin:40, colCount:4,
-        animType:'flip' , flipAnim:'tb', animSpeed:250, resultIcons:true, randomised:true }; 
+        animType:'flip' , flipAnim:'tb', animSpeed:240,openDelay:900, resultIcons:false, randomised:true }; 
     $('#tutorial-memorygame').quizyMemoryGame(quizyParams);
     $('#restart').click(function(){
       $('#tutorial-memorygame').quizyMemoryGame('restart');
@@ -160,6 +158,7 @@ shuffle($imagenes);
     
    
   </script>
-
+ 
 </body>
+
 </html>
