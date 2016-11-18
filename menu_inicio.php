@@ -197,7 +197,7 @@ $apellido = $_SESSION['Apellidos']
 
     </div>
 </body>
-  <script src="js/bootstrap.js" ></script>
+<!--  <script src="js/bootstrap.js" ></script>-->
 <script>
 
 
