@@ -25,11 +25,13 @@ $apellido = $_SESSION['Apellidos']
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
         <link href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css" rel="stylesheet" />
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>    
+      
         <script src="js/scripts.js"></script>
         <link rel="stylesheet" href="css/styles2.css" />
-
-
+        <style>
+  body{
+                background:url(img/background_1.png) ;
+            }</style>
     </head>
     <body>
 
@@ -59,7 +61,7 @@ $apellido = $_SESSION['Apellidos']
                   
      <ul class="nav navbar-nav navbar-right">
           <li class="dropdown"> 
-            <img data-toggle="dropdown" src="img/<?php echo $_SESSION['DNI']; ?>.jpg" 
+            <img data-toggle="dropdown" src="img/<?php echo $_SESSION['DNI']; ?>.jpg" onerror="this.src='img/camara.png';"
                                  class="img-circle dropdown-toggle" style="width:55px;padding:10px;">
                             <ul class="dropdown-menu">
                                  <li><a href="#">Conectado como <?php echo $nombre; echo ' '; ?><?php echo $apellido; ?></a></li>
@@ -87,9 +89,7 @@ $apellido = $_SESSION['Apellidos']
   
     <br>
     <br>
-        <div class="row">
-            <h2 class="text-center" style="color:white;">PRACTIQUEMOS</h2>
-        </div>
+    
 
 
         <div class="container">
@@ -100,11 +100,11 @@ $apellido = $_SESSION['Apellidos']
 
                         <div class='wrapper' id="menu" onclick="$('div#centro1').load('juego_oveja.php')">
                             <!-- image -->
-                            <img  id="imagen_menu"class="agran" src="img/fotooveja.jpg" />
+                            <img  id="imagen_menu"class="agran" src="img/iconoMemory.png" />
                             <!-- description div -->
                             <div class='description' >
                                 <!-- description content -->
-                                <p class='description_content'>MEMORY GAME</p>
+                                <p class='description_content text-center'>MEMORY GAME</p>
                                 <!-- end description content -->
                             </div>
                             <!-- end description div -->
@@ -116,11 +116,11 @@ $apellido = $_SESSION['Apellidos']
 
                         <div class='wrapper' id="menu" onclick="$('div#centro1').load('juego_flip.php')">
                             <!-- image -->
-                            <img id="imagen_menu" class="agran" src="img/ovejaPareja.jpg" />
+                            <img id="imagen_menu" class="agran" src="img/iconoFlip.png" />
                             <!-- description div -->
                             <div class='description' >
                                 <!-- description content -->
-                                <p class='description_content'>FLIP, ESTUDIO</p>
+                                <p class='description_content text-center'>FLIP, ESTUDIO</p>
                                 <!-- end description content -->
                             </div>
                             <!-- end description div -->
@@ -132,11 +132,11 @@ $apellido = $_SESSION['Apellidos']
 
                         <div class='wrapper' id="menu" onclick="$('div#centro1').load('juego_quiz/juego_quiz.php')">
                             <!-- image -->
-                            <img id="imagen_menu"class="agran" src="img/ovejaPareja.jpg" />
+                            <img  id="imagen_menu"class="agran" src="img/iconoQuiz.png" />
                             <!-- description div -->
                             <div class='description' >
                                 <!-- description content -->
-                                <p class='description_content'>QUIZ</p>
+                                <p class='description_content text-center'>QUIZ</p>
                                 <!-- end description content -->
                             </div>
                             <!-- end description div -->
@@ -145,13 +145,13 @@ $apellido = $_SESSION['Apellidos']
 
                     </li>
                     <li>
-                        <div class='wrapper' id="menu" onclick="$('div#centro1').load('usuario_progreso.php')">
+                        <div class='wrapper' id="menu" onclick="$('div#centro1').load('zoom.php')">
                             <!-- image -->
-                            <img id="imagen_menu" class="agran" src="img/ovejaPareja.jpg" />
+                            <img id="imagen_menu" class="agran" src="img/iconoZoom.png" />
                             <!-- description div -->
                             <div class='description' >
                                 <!-- description content -->
-                                <p class='description_content'>DRAGG & DROP</p>
+                                <p class='description_content text-center'>ZOOM</p>
                                 <!-- end description content -->
                             </div>
                             <!-- end description div -->
@@ -161,13 +161,13 @@ $apellido = $_SESSION['Apellidos']
                     </li>
                     <li>
                         <a href="juego_adivina.php">
-                            <div class='wrapper' id="menu">
+                            <div class='wrapper' id="menu" >
                                 <!-- image -->
-                                <img id="imagen_menu" class="agran" src="img/ovejaPareja.jpg" />
+                                <img id="imagen_menu" class="agran" src="img/iconoDrag.png" />
                                 <!-- description div -->
                                 <div class='description' >
                                     <!-- description content -->
-                                    <p class='description_content'>Cada oveja con su pareja</p>
+                                    <p class='description_content text-center'>DRAGG & DROP</p>
                                     <!-- end description content -->
                                 </div>
                                 <!-- end description div -->
@@ -183,7 +183,7 @@ $apellido = $_SESSION['Apellidos']
                             <!-- description div -->
                             <div class='description' >
                                 <!-- description content -->
-                                <p class='description_content'>¿WHO IS WHO?</p>
+                                <p class='description_content text-center'>¿WHO IS WHO?</p>
                                 <!-- end description content -->
                             </div>
                             <!-- end description div -->
@@ -196,8 +196,10 @@ $apellido = $_SESSION['Apellidos']
         </div>  
 
     </div>
+                <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> 
+                   <script src="js/bootstrap.js" ></script>
 </body>
-<!--  <script src="js/bootstrap.js" ></script>-->
+
 <script>
 
 

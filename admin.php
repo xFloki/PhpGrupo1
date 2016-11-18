@@ -10,13 +10,17 @@ and open the template in the editor.
         <title></title>
         <link rel="stylesheet" href="css/bootstrap.min.css"  />
         <link rel="stylesheet" href="css/styleAdmin.css"  />
-
+        <style>
+            body{
+                background:url(img/background_1.png) ;
+            }
+        </style>
 
 
     </head>
 
 
-    <body background="img/background_1.png">
+    <body>
 
         <div id="mainInicioAdmin">
             <div id="mainJuegoAdmin">
