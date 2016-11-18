@@ -10,3 +10,16 @@ and open the template in the editor.
 
 .usuario { transition: all .2s ease-in-out; }
 .usuario:hover { transform: scale(1.1); }
+
+#profe{
+      
+    position:fixed; /*El div será ubicado con relación a la pantalla*/
+    bottom :0px; /*Abajo deje un espacio de 0px*/
+    right:0px; /*A la izquierda deje un espacio de 0px*/
+}
+#profe2{
+      
+    position:fixed; /*El div será ubicado con relación a la pantalla*/
+    bottom :0px; /*Abajo deje un espacio de 0px*/
+    right:0px; /*A la izquierda deje un espacio de 0px*/
+}

@@ -11,7 +11,7 @@
 
 
     <body>
-
+      
 
 
 <?php
@@ -48,7 +48,11 @@ for ($i = 0; $i < $num_progresos; $i++) {
    
 }
 $contador = 0;
+
  echo'
+              
+                    
+
             <table class="table table-striped text-center" >
             <tr class="warning">
             

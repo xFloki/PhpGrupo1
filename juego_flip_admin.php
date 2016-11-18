@@ -13,6 +13,9 @@
         <div id="mainJuego">
            
                 <div id="div1"  style="margin:5% 10% 0 10%">
+                    <div id="profe2">
+          <img style="width:100px;" src="img/profesor.png">
+      </div>
                     <?php
                     include ('./misfunciones.php');
 

@@ -16,12 +16,14 @@ and open the template in the editor.
     </head>
 
 
-    <body>
+    <body background="img/background_1.png">
 
         <div id="mainInicioAdmin">
             <div id="mainJuegoAdmin">
                 <div id="div2"  style="margin:5% 10% 0 10%">
-
+                    <div id="profe">
+                    <img style="width:100px;" src="img/profesor.png">
+                    </div>
                     <?php
                     include ('./misfunciones.php');
 
@@ -56,12 +58,14 @@ and open the template in the editor.
 
                     echo'
                         <div class="row">
-        <div class="col-md-4">
+        <div class="col-lg-4 col-md-4 col-xs-4 col-sm-4 ">
             <button onclick="inicio1()" type="button" class="btn btn-info btn-sm"> <img src="img/recarga.png"style="width:15px;"> </button>
         </div>
-        <div class="col-md-4"><button  style="width:150px; margin-right:20px" type="button" class="btn btn-primary btn-sm active">Inicio</button>
-                <button style="width:150px" onclick="juego()" type="button" class="btn btn-primary btn-sm">Juego</button></div>
-        <div class="col-md-4">
+        <div class="col-lg-4 col-md-4 col-xs-4 col-sm-4 "><button  style="width:150px; margin-right:20px" type="button" class="btn btn-primary btn-sm active">Inicio</button>
+               <button style="width:150px" onclick="juego()" type="button" class="btn btn-primary btn-sm">Juego</button></div> 
+        
+
+<div class="col-lg-4 col-md-4 col-xs-4 col-sm-4 ">
         <button style="float: right;" href="./" type="button" class="btn btn-info btn-danger"> 
         <img src="img/apagar.png"style="width:15px;"> </button>
                </div>

@@ -10,11 +10,12 @@
 
 
     </head>
-    <body background="img/background.png">
+    <body background="img/background_1.png">
         <br></br>
      
          <br></br>
           <br></br>
+          
         <?php
         include ('./misfunciones.php');
 
